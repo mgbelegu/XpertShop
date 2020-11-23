@@ -1,0 +1,49 @@
+.productContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  width: auto;
+  min-width: 300px;
+  height: auto;
+  background-color: #ffffff;
+  border: 1px solid #fff;
+  padding: 16px;
+  margin: 16px;
+  border-radius: 6px;
+  -webkit-box-shadow: 0px 0px 3px 1px rgba(204, 204, 204, 1);
+  -moz-box-shadow: 0px 0px 3px 1px rgba(204, 204, 204, 1);
+  box-shadow: 0px 0px 3px 1px rgba(204, 204, 204, 1);
+  color: #707070;
+}
+
+.productContainer button {
+  margin: 2px;
+  padding: 10px 16px;
+  border: 1px solid #0a3637;
+  border-radius: 10px;
+  color: #0a3637;
+  outline: none;
+  background-color: white;
+  cursor: pointer;
+}
+
+.buyNow {
+  background-color: #0a3637 !important;
+  color: white !important;
+}
+
+.buttonDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.productContainer img {
+  width: 100%;
+}
+
+.price {
+  font-weight: bold;
+  margin-bottom: 26px;
+}
