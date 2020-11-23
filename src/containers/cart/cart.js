@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import "./orders.css";
+import "./cart.css";
 import Layout from "../layout/layout";
 import LoginIcon from "../../assets/loginicon.png";
 import { NavLink } from "react-router-dom";
+import Logout from "../logout/logout";
 
-class Orders extends Component {
+class Cart extends Component {
   render() {
-    let Authenticated = (
+    let cartAuthenticated = (
       <div className="notLoggedIn">
         <h2>Ju nuk jeni kyçur akoma!</h2>
         <p>
@@ -20,22 +21,23 @@ class Orders extends Component {
     );
 
     if (this.props.isAuthenticated) {
-      Authenticated = (
-        <div className="orders">
-          <div className="ordersHeader">
-            <h1>Porositë e juaja</h1>
+      cartAuthenticated = (
+        <div className="cart">
+          <div className="cartHeader">
+            <h1>Shporta juaj</h1>
             <a href="/logout">Dilni</a>
           </div>
 
-          <div className="ordersContainer">
-            <h3>Porositë:</h3>
-            <p>Ju nuk keni asnjë porosi!</p>
+          <div className="cartContainer">
+            <h3>Produktet:</h3>
+            <p>Shporta juaj eshte bosh!</p>
+            <button>Checkout</button>
           </div>
         </div>
       );
     }
 
-    return <Layout>{Authenticated}</Layout>;
+    return <Layout>{cartAuthenticated}</Layout>;
   }
 }
 
@@ -45,4 +47,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(Orders);
+export default connect(mapStateToProps)(Cart);

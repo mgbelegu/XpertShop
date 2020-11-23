@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import "./orders.css";
+import "./profile.css";
 import Layout from "../layout/layout";
 import LoginIcon from "../../assets/loginicon.png";
 import { NavLink } from "react-router-dom";
 
-class Orders extends Component {
+class Profile extends Component {
   render() {
     let Authenticated = (
       <div className="notLoggedIn">
@@ -21,15 +21,15 @@ class Orders extends Component {
 
     if (this.props.isAuthenticated) {
       Authenticated = (
-        <div className="orders">
-          <div className="ordersHeader">
-            <h1>Porositë e juaja</h1>
+        <div className="profile">
+          <div className="profileHeader">
+            <h1>Mirë se vjen në profilin tënd personal!</h1>
             <a href="/logout">Dilni</a>
           </div>
 
-          <div className="ordersContainer">
-            <h3>Porositë:</h3>
-            <p>Ju nuk keni asnjë porosi!</p>
+          <div className="profileContainer">
+            <h3>Të dhënat personale:</h3>
+            <p>Ju nuk keni asnjë të dhënë!</p>
           </div>
         </div>
       );
@@ -45,4 +45,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(Orders);
+export default connect(mapStateToProps)(Profile);

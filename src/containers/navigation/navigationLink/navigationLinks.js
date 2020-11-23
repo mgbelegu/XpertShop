@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import HomeIcon from "../../../assets/home.png";
 import PorosiIcon from "../../../assets/porosite.png";
 import ProfiliIcon from "../../../assets/profili.png";
@@ -7,24 +8,24 @@ import ShoppingIcon from "../../../assets/shopping.png";
 const navigationLinks = (props) => (
   <ul className={props.classes}>
     <li>
-      <a href="/">
+      <NavLink to="/" exact>
         <img className="navIcons" src={HomeIcon} alt="Home" />
-      </a>
+      </NavLink>
     </li>
     <li>
-      <a href="/shporta">
+      <NavLink to="/shporta">
         <img className="navIcons" src={ShoppingIcon} alt="Shporta" />
-      </a>
+      </NavLink>
     </li>
     <li>
-      <a href="/porosite">
+      <NavLink to="/porosite">
         <img className="navIcons" src={PorosiIcon} alt="Porosite" />
-      </a>
+      </NavLink>
     </li>
     <li>
-      <a href="/profili">
+      <NavLink to="/profili">
         <img className="navIcons" src={ProfiliIcon} alt="Profili" />
-      </a>
+      </NavLink>
     </li>
   </ul>
 );

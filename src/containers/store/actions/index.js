@@ -1,2 +1,2 @@
-export { auth } from "./auth";
+export { auth, logout } from "./auth";
 export { fetchProducts } from "./products";

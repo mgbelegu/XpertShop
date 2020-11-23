@@ -1,33 +1,9 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
-import Product from "../../components/product/product";
-import "./home.css";
-import Spinner from "../ui/spinner/spinner";
-import * as actions from "../store/actions/index";
-import chevron from "../../assets/chevron.png";
+import "./categories.css";
 import Layout from "../layout/layout";
-import { NavLink } from "react-router-dom";
 
-class Store extends Component {
-  componentDidMount() {
-    this.props.onFetchProducts();
-  }
-
+class Categories extends Component {
   render() {
-    let productList = <Spinner />;
-
-    if (!this.props.loading) {
-      productList = this.props.products.map((productItem, i) => (
-        <Product
-          key={i}
-          productImage={productItem.img}
-          productTitle={productItem.title}
-          productDescription={productItem.description}
-          productPrice={productItem.price}
-        />
-      ));
-    }
-
     return (
       <Layout>
         <div className="storeHeaderImage">
@@ -37,9 +13,6 @@ class Store extends Component {
         <div className="categories">
           <div className="categoriesHeader">
             <h1>Kategorite</h1>
-            <NavLink to="/categories">
-              Të gjitha <img className="chevron" src={chevron} alt="" />
-            </NavLink>
           </div>
 
           <div className="categoriesContainer">
@@ -80,33 +53,49 @@ class Store extends Component {
               <h3>Tech</h3>
             </div>
           </div>
-        </div>
 
-        <div className="newProducts">
-          <div className="newProductsHeader">
-            <h1>Produktet e reja</h1>
-            <NavLink to="/newproducts">
-              Të gjitha <img className="chevron" src={chevron} alt="" />
-            </NavLink>
+          <div className="categoriesContainer">
+            <div>
+              <a href="/categories/woman">
+                <img src="http://via.placeholder.com/150" alt="" />
+              </a>
+              <h3>Books</h3>
+            </div>
+            <div>
+              <a href="/categories/home">
+                <img src="http://via.placeholder.com/150" alt="" />
+              </a>
+              <h3>Clothes</h3>
+            </div>
+            <div>
+              <a href="/categories/electric">
+                <img src="http://via.placeholder.com/150" alt="" />
+              </a>
+              <h3>Accessories</h3>
+            </div>
+            <div>
+              <a href="/categories/bike">
+                <img src="http://via.placeholder.com/150" alt="" />
+              </a>
+              <h3>Backpacks</h3>
+            </div>
+            <div>
+              <a href="/categories/food">
+                <img src="http://via.placeholder.com/150" alt="" />
+              </a>
+              <h3>Scooters</h3>
+            </div>
+            <div>
+              <a href="/categories/tech">
+                <img src="http://via.placeholder.com/150" alt="" />
+              </a>
+              <h3>Phones</h3>
+            </div>
           </div>
         </div>
-        <div className="products">{productList}</div>
       </Layout>
     );
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    products: state.products.products,
-    loading: state.products.loading,
-  };
-};
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    onFetchProducts: () => dispatch(actions.fetchProducts()),
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Store);
+export default Categories;

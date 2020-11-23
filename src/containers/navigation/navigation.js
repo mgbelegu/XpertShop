@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { NavLink } from "react-router-dom";
 import NavLinks from "../navigation/navigationLink/navigationLinks";
 import Aux from "../hoc/Auxiliary";
 import logo from "../../assets/logo.PNG";
@@ -11,9 +12,9 @@ class Navigation extends Component {
         <nav>
           <ul>
             <li>
-              <a href="/">
+              <NavLink to="/">
                 <img className="navLogo" src={logo} alt="Xpert Shop Logo" />
-              </a>
+              </NavLink>
             </li>
           </ul>
           <NavLinks />

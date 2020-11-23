@@ -82,3 +82,10 @@ button:disabled {
   background-color: gray;
   cursor: not-allowed;
 }
+
+.registerError {
+  color: red;
+  text-align: center;
+  background-color: rgb(255, 224, 219);
+  padding: 16px;
+}

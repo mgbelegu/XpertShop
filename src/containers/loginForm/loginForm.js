@@ -1,7 +1,11 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import Input from "../ui/input/input";
 import ShopLogo from "../../assets/shop.png";
 import "./loginForm.css";
+import * as actions from "../store/actions/index";
+import Spinner from "../../containers/ui/spinner/spinner";
+import Layout from "../layout/layout";
 
 class LoginForm extends Component {
   state = {
@@ -41,6 +45,7 @@ class LoginForm extends Component {
 
     formIsValid: false,
     loading: false,
+    isSignup: false,
   };
 
   checkValidity(value, rules) {
@@ -93,9 +98,15 @@ class LoginForm extends Component {
     });
   };
 
-  loginHandler = () => {
-    //null
+  loginHandler = (event) => {
+    event.preventDefault();
+    this.props.onAuth(
+      this.state.loginForm.email.value,
+      this.state.loginForm.password.value,
+      this.state.isSignup
+    );
   };
+
   render() {
     const loginFormElementsArray = [];
     for (let key in this.state.loginForm) {
@@ -105,34 +116,62 @@ class LoginForm extends Component {
       });
     }
 
+    let login = loginFormElementsArray.map((formElement) => (
+      <Input
+        key={formElement.id}
+        elementType={formElement.config.elementType}
+        elementConfig={formElement.config.elementConfig}
+        value={formElement.config.value}
+        labelName={formElement.config.labelName}
+        passwordMsg={formElement.config.passwordValidation}
+        changed={(event) => this.inputChangedHandler(event, formElement.id)}
+        shouldValidate={formElement.config.validation}
+        touched={formElement.config.touched}
+        invalid={!formElement.config.valid}
+      />
+    ));
+
+    if (this.props.loading) {
+      login = <Spinner />;
+    }
+
+    let errorMessage = null;
+    if (this.props.error) {
+      errorMessage = <p className="loginError">{this.props.error.message}</p>;
+    }
+
     return (
-      <form onSubmit={this.loginHandler}>
-        <img className="shopLogo" src={ShopLogo} alt="Xpert Shop Logo" />
-        <label className="labelTitle">Vendosni numrin e celularit</label>
-        {loginFormElementsArray.map((formElement) => (
-          <Input
-            key={formElement.id}
-            elementType={formElement.config.elementType}
-            elementConfig={formElement.config.elementConfig}
-            value={formElement.config.value}
-            labelName={formElement.config.labelName}
-            passwordMsg={formElement.config.passwordValidation}
-            changed={(event) => this.inputChangedHandler(event, formElement.id)}
-            shouldValidate={formElement.config.validation}
-            touched={formElement.config.touched}
-            invalid={!formElement.config.valid}
-          />
-        ))}
-        <button type="submit" className="loginButton">
-          KYCU
-        </button>
-        <label className="labelQuestion">Nuk keni Adrese?</label>
-        <a className="registerLink" href="/regjistrohu">
-          Rregjistrohuni
-        </a>
-      </form>
+      <Layout>
+        <form onSubmit={this.loginHandler}>
+          {errorMessage}
+          <img className="shopLogo" src={ShopLogo} alt="Xpert Shop Logo" />
+          <label className="labelTitle">Kyçuni</label>
+          {login}
+          <button type="submit" className="loginButton">
+            KYCU
+          </button>
+          <label className="labelQuestion">Nuk keni Adrese?</label>
+          <a className="registerLink" href="/regjistrohu">
+            Rregjistrohuni
+          </a>
+        </form>
+      </Layout>
     );
   }
 }
 
-export default LoginForm;
+const mapStateToProps = (state) => {
+  return {
+    loading: state.auth.loading,
+    error: state.auth.error,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onAuth: (email, password, isSignup) =>
+      dispatch(actions.auth(email, password, isSignup)),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(LoginForm);

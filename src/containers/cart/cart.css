@@ -1,15 +1,15 @@
-.orders {
+.cart {
   margin: 16px 48px;
 }
 
-.ordersHeader {
+.cartHeader {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
 
-.ordersContainer {
+.cartContainer {
   margin: 48px;
 }
 

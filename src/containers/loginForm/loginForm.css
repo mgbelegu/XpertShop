@@ -59,3 +59,10 @@ label {
   color: #0a3637;
   margin: 0 auto;
 }
+
+.loginError {
+  color: red;
+  text-align: center;
+  background-color: rgb(255, 224, 219);
+  padding: 16px;
+}

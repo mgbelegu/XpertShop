@@ -4,6 +4,7 @@ import Input from "../ui/input/input";
 import "./registerForm.css";
 import Spinner from "../ui/spinner/spinner";
 import * as actions from "../store/actions/index";
+import Layout from "../layout/layout";
 
 class RegisterForm extends Component {
   state = {
@@ -102,6 +103,7 @@ class RegisterForm extends Component {
     },
     formIsValid: false,
     loading: false,
+    isSignup: true,
   };
 
   /*orderHandler = (event) => {
@@ -181,7 +183,8 @@ class RegisterForm extends Component {
     event.preventDefault();
     this.props.onAuth(
       this.state.registerForm.email.value,
-      this.state.registerForm.password.value
+      this.state.registerForm.password.value,
+      this.state.isSignup
     );
   };
 
@@ -194,56 +197,77 @@ class RegisterForm extends Component {
       });
     }
 
-    let form = (
-      <form onSubmit={this.submitHandler}>
-        <label className="labelTitle">Rregjistrohuni për të vazhduar</label>
-        <label className="labelSubtitle">Bëhu pjesë e Xpert eShop</label>
-        {registerFormElementsArray.map((formElement) => (
-          <Input
-            key={formElement.id}
-            elementType={formElement.config.elementType}
-            elementConfig={formElement.config.elementConfig}
-            value={formElement.config.value}
-            labelName={formElement.config.labelName}
-            passwordMsg={formElement.config.passwordValidation}
-            changed={(event) => this.inputChangedHandler(event, formElement.id)}
-            shouldValidate={formElement.config.validation}
-            touched={formElement.config.touched}
-            invalid={!formElement.config.valid}
-          />
-        ))}
-        <label className="labelNotify">
-          Fushat e shënuara me * janë të detyrueshme
-        </label>
-        <label className="labelButtons">
-          DUKE U RREGJISTRUAR, JU KENI RËNË DAKORD ME TERMAT E PËRDORIMIT
-        </label>
-        <button
-          className="loginButton"
-          style={{ marginBottom: "15px" }}
-          type="submit"
-          disabled={!this.state.formIsValid}
-        >
-          RREGJISTROHU
-        </button>
-        <label className="labelButtons">APO JENI TASHMË TË RREGJISTRUAR</label>
-        <a
-          href="/kycu"
-          className="loginButton"
-          style={{ marginBottom: "15px" }}
-        >
-          KYCU
-        </a>
-      </form>
-    );
+    let form = registerFormElementsArray.map((formElement) => (
+      <Input
+        key={formElement.id}
+        elementType={formElement.config.elementType}
+        elementConfig={formElement.config.elementConfig}
+        value={formElement.config.value}
+        labelName={formElement.config.labelName}
+        passwordMsg={formElement.config.passwordValidation}
+        changed={(event) => this.inputChangedHandler(event, formElement.id)}
+        shouldValidate={formElement.config.validation}
+        touched={formElement.config.touched}
+        invalid={!formElement.config.valid}
+      />
+    ));
 
-    if (this.state.loading) {
+    if (this.props.loading) {
       form = <Spinner />;
     }
 
-    return <div>{form}</div>;
+    let errorMessage = null;
+    if (this.props.error) {
+      errorMessage = (
+        <p className="registerError">{this.props.error.message}</p>
+      );
+    }
+
+    return (
+      <Layout>
+        <div>
+          <form onSubmit={this.submitHandler}>
+            {errorMessage}
+            <label className="labelTitle">Rregjistrohuni për të vazhduar</label>
+            <label className="labelSubtitle">Bëhu pjesë e Xpert eShop</label>
+            {form}
+            <label className="labelNotify">
+              Fushat e shënuara me * janë të detyrueshme
+            </label>
+            <label className="labelButtons">
+              DUKE U RREGJISTRUAR, JU KENI RËNË DAKORD ME TERMAT E PËRDORIMIT
+            </label>
+            <button
+              className="loginButton"
+              style={{ marginBottom: "15px" }}
+              type="submit"
+              disabled={!this.state.formIsValid}
+            >
+              RREGJISTROHU
+            </button>
+            <label className="labelButtons">
+              APO JENI TASHMË TË RREGJISTRUAR
+            </label>
+            <a
+              href="/kycu"
+              className="loginButton"
+              style={{ marginBottom: "15px" }}
+            >
+              KYCU
+            </a>
+          </form>
+        </div>
+      </Layout>
+    );
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    loading: state.auth.loading,
+    error: state.auth.error,
+  };
+};
 
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -251,4 +275,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(null, mapDispatchToProps)(RegisterForm);
+export default connect(mapStateToProps, mapDispatchToProps)(RegisterForm);

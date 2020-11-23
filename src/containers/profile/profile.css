@@ -1,15 +1,15 @@
-.orders {
+.profile {
   margin: 16px 48px;
 }
 
-.ordersHeader {
+.profileHeader {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
 
-.ordersContainer {
+.profileContainer {
   margin: 48px;
 }
 
