@@ -4,7 +4,6 @@ import "./cart.css";
 import Layout from "../layout/layout";
 import LoginIcon from "../../assets/loginicon.png";
 import { NavLink } from "react-router-dom";
-import Logout from "../logout/logout";
 
 class Cart extends Component {
   render() {
