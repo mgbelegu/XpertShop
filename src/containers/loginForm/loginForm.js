@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { Redirect } from "react-router-dom";
 import Input from "../ui/input/input";
 import ShopLogo from "../../assets/shop.png";
 import "./loginForm.css";
@@ -140,8 +141,14 @@ class LoginForm extends Component {
       errorMessage = <p className="loginError">{this.props.error.message}</p>;
     }
 
+    let authRedirect = null;
+    if (this.props.isAuthenticated) {
+      authRedirect = <Redirect to="/" />;
+    }
+
     return (
       <Layout>
+        {authRedirect}
         <form onSubmit={this.loginHandler}>
           {errorMessage}
           <img className="shopLogo" src={ShopLogo} alt="Xpert Shop Logo" />
@@ -164,6 +171,7 @@ const mapStateToProps = (state) => {
   return {
     loading: state.auth.loading,
     error: state.auth.error,
+    isAuthenticated: state.auth.token !== null,
   };
 };
 

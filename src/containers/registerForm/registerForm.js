@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { Redirect } from "react-router-dom";
 import Input from "../ui/input/input";
 import "./registerForm.css";
 import Spinner from "../ui/spinner/spinner";
@@ -223,8 +224,14 @@ class RegisterForm extends Component {
       );
     }
 
+    let authRedirect = null;
+    if (this.props.isAuthenticated) {
+      authRedirect = <Redirect to="/profili" />;
+    }
+
     return (
       <Layout>
+        {authRedirect}
         <div>
           <form onSubmit={this.submitHandler}>
             {errorMessage}
@@ -266,6 +273,7 @@ const mapStateToProps = (state) => {
   return {
     loading: state.auth.loading,
     error: state.auth.error,
+    isAuthenticated: state.auth.token !== null,
   };
 };
 
