@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/XpertShop/static/css/main.56cace62.chunk.css",
+    "main.js": "/XpertShop/static/js/main.19136826.chunk.js",
+    "main.js.map": "/XpertShop/static/js/main.19136826.chunk.js.map",
+    "runtime-main.js": "/XpertShop/static/js/runtime-main.75271b66.js",
+    "runtime-main.js.map": "/XpertShop/static/js/runtime-main.75271b66.js.map",
+    "static/js/2.68075a4a.chunk.js": "/XpertShop/static/js/2.68075a4a.chunk.js",
+    "static/js/2.68075a4a.chunk.js.map": "/XpertShop/static/js/2.68075a4a.chunk.js.map",
+    "static/js/3.1f37a20d.chunk.js": "/XpertShop/static/js/3.1f37a20d.chunk.js",
+    "static/js/3.1f37a20d.chunk.js.map": "/XpertShop/static/js/3.1f37a20d.chunk.js.map",
+    "index.html": "/XpertShop/index.html",
+    "static/css/main.56cace62.chunk.css.map": "/XpertShop/static/css/main.56cace62.chunk.css.map",
+    "static/js/2.68075a4a.chunk.js.LICENSE.txt": "/XpertShop/static/js/2.68075a4a.chunk.js.LICENSE.txt",
+    "static/media/home.09b3a21f.png": "/XpertShop/static/media/home.09b3a21f.png",
+    "static/media/logo.9337ebb5.PNG": "/XpertShop/static/media/logo.9337ebb5.PNG",
+    "static/media/porosite.30bcb5d1.png": "/XpertShop/static/media/porosite.30bcb5d1.png",
+    "static/media/profili.b97e21f7.png": "/XpertShop/static/media/profili.b97e21f7.png",
+    "static/media/shop.baa04878.png": "/XpertShop/static/media/shop.baa04878.png",
+    "static/media/shopping.794a79ce.png": "/XpertShop/static/media/shopping.794a79ce.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.75271b66.js",
+    "static/js/2.68075a4a.chunk.js",
+    "static/css/main.56cace62.chunk.css",
+    "static/js/main.19136826.chunk.js"
+  ]
+}
