@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import NavLinks from "../navigation/navigationLink/navigationLinks";
 import Aux from "../hoc/Auxiliary";
-import logo from "../../assets/logo.PNG";
+import logo from "../../assets/xpertshoplogo.svg";
 import "./navigation.css";
 
 class Navigation extends Component {

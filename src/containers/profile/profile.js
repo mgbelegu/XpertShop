@@ -4,7 +4,7 @@ import "./profile.css";
 import Layout from "../layout/layout";
 import LoginIcon from "../../assets/loginicon.png";
 import { NavLink } from "react-router-dom";
-import logoutIcon from "../../assets/Exit.png";
+import logoutIcon from "../../assets/Exit.svg";
 
 class Profile extends Component {
   render() {

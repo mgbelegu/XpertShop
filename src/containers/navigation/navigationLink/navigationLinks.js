@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
-import HomeIcon from "../../../assets/home.png";
-import PorosiIcon from "../../../assets/porosite.png";
-import ProfiliIcon from "../../../assets/profili.png";
-import ShoppingIcon from "../../../assets/shopping.png";
+import HomeIcon from "../../../assets/Home.svg";
+import PorosiIcon from "../../../assets/Porosite.svg";
+import ProfiliIcon from "../../../assets/Profili.svg";
+import ShoppingIcon from "../../../assets/Shopping.svg";
 import { connect } from "react-redux";
 
 class navigationLinks extends Component {
