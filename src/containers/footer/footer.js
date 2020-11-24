@@ -75,7 +75,7 @@ const footer = (props) => {
         <p>
           Copyright &copy;
           {new Date().getFullYear()} All rights reserved |{" "}
-          <a href="https://xpert.al" target="_blank">
+          <a href="https://xpert.al" target="_blank" rel="noreferrer">
             Xpert Systems
           </a>
         </p>
