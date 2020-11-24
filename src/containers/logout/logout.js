@@ -9,7 +9,7 @@ class Logout extends Component {
   }
 
   render() {
-    return <Redirect to="/profili" />;
+    return <Redirect to="/XpertShop" />;
   }
 }
 

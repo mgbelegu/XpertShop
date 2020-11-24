@@ -5,6 +5,8 @@ import Layout from "../layout/layout";
 import LoginIcon from "../../assets/loginicon.png";
 import { NavLink } from "react-router-dom";
 import logoutIcon from "../../assets/Exit.svg";
+import cartIcon from "../../assets/Shopping2.svg";
+import ordersIcon from "../../assets/Porosite2.svg";
 
 class Profile extends Component {
   render() {
@@ -36,8 +38,31 @@ class Profile extends Component {
           </div>
 
           <div className="profileContainer">
-            <h3>Të dhënat personale:</h3>
-            <p>Ju nuk keni asnjë të dhënë!</p>
+            <div className="userInfo">
+              <h3>Të dhënat personale:</h3>
+              <p>Ju nuk keni asnjë të dhënë!</p>
+            </div>
+            <div className="userLinks">
+              <h3>Të tjera:</h3>
+              <div className="others">
+                <NavLink to="/shporta">
+                  <img
+                    className="cartIcon"
+                    src={cartIcon}
+                    alt=""
+                    title="Shkoni tek shporta."
+                  />
+                </NavLink>
+                <NavLink to="/porosite">
+                  <img
+                    className="ordersIcon"
+                    src={ordersIcon}
+                    alt=""
+                    title="Shkoni tek porositë."
+                  />
+                </NavLink>
+              </div>
+            </div>
           </div>
         </div>
       );

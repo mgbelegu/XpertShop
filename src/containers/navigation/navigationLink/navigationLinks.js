@@ -10,20 +10,20 @@ class navigationLinks extends Component {
   render() {
     return (
       <ul className={this.props.classes}>
-        <li>
+        <li className="homeLink">
           <a href="/XpertShop/">
             <img className="navIcons" src={HomeIcon} alt="Home" />
           </a>
         </li>
         {this.props.isAuthenticated ? (
-          <li>
+          <li className="cartLink">
             <NavLink to="/shporta">
               <img className="navIcons" src={ShoppingIcon} alt="Shporta" />
             </NavLink>
           </li>
         ) : null}
         {this.props.isAuthenticated ? (
-          <li>
+          <li className="ordersLink">
             <NavLink to="/porosite">
               <img className="navIcons" src={PorosiIcon} alt="Porosite" />
             </NavLink>

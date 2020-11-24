@@ -32,6 +32,21 @@ li {
   align-items: center;
 }
 
+@media (max-width: 620px) {
+  nav ul {
+    padding: 0;
+  }
+  .homeLink {
+    display: none;
+  }
+  .cartLink {
+    display: none;
+  }
+  .ordersLink {
+    display: none;
+  }
+}
+
 li a {
   color: white;
   text-decoration: none;

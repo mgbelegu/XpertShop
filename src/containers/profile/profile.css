@@ -11,6 +11,14 @@
 
 .profileContainer {
   margin: 48px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.others {
+  display: flex;
+  flex-direction: row;
 }
 
 .notLoggedIn {
@@ -26,4 +34,12 @@
 .notLoggedIn a {
   color: black;
   font-weight: bold;
+}
+
+.cartIcon {
+  height: 85px;
+}
+
+.ordersIcon {
+  height: 85px;
 }
