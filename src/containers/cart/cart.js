@@ -4,6 +4,8 @@ import "./cart.css";
 import Layout from "../layout/layout";
 import LoginIcon from "../../assets/loginicon.png";
 import { NavLink } from "react-router-dom";
+import CartProduct from "./cartProduct/cartProduct";
+import CartTotal from "./cartTotal/cartTotal";
 
 class Cart extends Component {
   render() {
@@ -28,8 +30,12 @@ class Cart extends Component {
 
           <div className="cartContainer">
             <h3>Produktet:</h3>
-            <p>Shporta juaj eshte bosh!</p>
-            <button>Checkout</button>
+            <CartProduct />
+            <CartProduct />
+            <CartProduct />
+            <CartProduct />
+            <CartTotal />
+            <button className="checkoutButton">Bëje porosinë</button>
           </div>
         </div>
       );

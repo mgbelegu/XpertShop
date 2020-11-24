@@ -1,0 +1,16 @@
+.cartTotal {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 16px;
+  border-bottom: 2px solid #0a3637;
+  margin-bottom: 16px;
+  background-color: #8ab83e;
+  border-radius: 4px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.cartTotal h4 {
+  margin: 0;
+}

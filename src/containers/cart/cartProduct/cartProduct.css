@@ -1,0 +1,46 @@
+.cartProduct {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
+
+.cartProductImage {
+  padding: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.cartProductInfo {
+  padding: 16px;
+}
+
+.cartProductSum {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 60px;
+  padding: 32px;
+}
+
+.cartProductSum input {
+  padding: 8px;
+}
+
+.deleteButton {
+  background-image: url(../../../assets/Delete.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: white;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+  display: block;
+  margin: auto 12px;
+  margin-right: 0;
+}

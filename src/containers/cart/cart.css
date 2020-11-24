@@ -1,5 +1,5 @@
 .cart {
-  margin: 16px 128px;
+  margin: 16px 128px 75px;
 }
 
 .cartHeader {
@@ -11,6 +11,7 @@
 
 .cartContainer {
   margin: 48px;
+  position: relative;
 }
 
 .notLoggedIn {
@@ -30,6 +31,22 @@
 
 .logoutIcon {
   height: 50px;
+}
+
+.checkoutButton {
+  width: 125px;
+  display: block;
+  position: absolute;
+  right: 0;
+  margin: 2px;
+  padding: 10px 16px;
+  border: 1px solid #0a3637;
+  border-radius: 10px;
+  color: white;
+  outline: none;
+  background-color: #0a3637;
+  cursor: pointer;
+  font-weight: bold;
 }
 
 @media (max-width: 1055px) {
