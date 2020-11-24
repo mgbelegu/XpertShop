@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/XpertShop/static/css/main.f2206f0e.chunk.css",
+    "main.css": "/XpertShop/static/css/main.fa32f677.chunk.css",
     "main.js": "/XpertShop/static/js/main.93ad6fc6.chunk.js",
     "main.js.map": "/XpertShop/static/js/main.93ad6fc6.chunk.js.map",
     "runtime-main.js": "/XpertShop/static/js/runtime-main.91445b2b.js",
@@ -10,7 +10,7 @@
     "static/js/3.b83706f3.chunk.js": "/XpertShop/static/js/3.b83706f3.chunk.js",
     "static/js/3.b83706f3.chunk.js.map": "/XpertShop/static/js/3.b83706f3.chunk.js.map",
     "index.html": "/XpertShop/index.html",
-    "static/css/main.f2206f0e.chunk.css.map": "/XpertShop/static/css/main.f2206f0e.chunk.css.map",
+    "static/css/main.fa32f677.chunk.css.map": "/XpertShop/static/css/main.fa32f677.chunk.css.map",
     "static/js/2.99f90fed.chunk.js.LICENSE.txt": "/XpertShop/static/js/2.99f90fed.chunk.js.LICENSE.txt",
     "static/media/Exit.4e4a3041.svg": "/XpertShop/static/media/Exit.4e4a3041.svg",
     "static/media/Home.455ad47d.svg": "/XpertShop/static/media/Home.455ad47d.svg",
@@ -25,7 +25,7 @@
   "entrypoints": [
     "static/js/runtime-main.91445b2b.js",
     "static/js/2.99f90fed.chunk.js",
-    "static/css/main.f2206f0e.chunk.css",
+    "static/css/main.fa32f677.chunk.css",
     "static/js/main.93ad6fc6.chunk.js"
   ]
 }
