@@ -11,6 +11,7 @@ import Cart from "./containers/cart/cart";
 import Logout from "./containers/logout/logout";
 import Orders from "./containers/orders/orders";
 import Profile from "./containers/profile/profile";
+import Footer from "./containers/footer/footer";
 import * as actions from "./containers/store/actions/index";
 import "./App.css";
 
@@ -32,6 +33,7 @@ class App extends Component {
           <Route path="/logout" component={Logout} />
           <Route path="/" exact component={Store} />
         </Switch>
+        <Footer />
       </Layout>
     );
   }
