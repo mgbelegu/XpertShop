@@ -1,6 +1,7 @@
 import React from "react";
 import Logo from "../../assets/xpertshoplogo.svg";
 import "./footer.css";
+import { NavLink } from "react-router-dom";
 
 const footer = (props) => {
   return (
@@ -29,10 +30,12 @@ const footer = (props) => {
         </div>
         <div className="navDiv">
           <h3 className="navH3">Navigation</h3>
-          <a href="/XpertShop/">Shop</a>
-          <a href="/XpertShop/shporta">Shporta</a>
-          <a href="/XpertShop/porosite">Porosite</a>
-          <a href="/XpertShop/profili">Profili</a>
+          <NavLink to="/" exact>
+            Shop
+          </NavLink>
+          <NavLink to="/shporta">Shporta</NavLink>
+          <NavLink to="/porosite">Porosite</NavLink>
+          <NavLink to="/profili">Profili</NavLink>
         </div>
         <div className="socialDiv">
           <h3 className="socialH3">Social Media</h3>
