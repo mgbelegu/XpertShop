@@ -27,7 +27,7 @@ class Profile extends Component {
         <div className="profile">
           <div className="profileHeader">
             <h1>Mirë se vjen në profilin tënd personal!</h1>
-            <a href="/logout">
+            <a href="/XpertShop/logout">
               <img
                 className="logoutIcon"
                 src={logoutIcon}

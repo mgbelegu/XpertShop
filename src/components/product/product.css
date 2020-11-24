@@ -33,6 +33,10 @@
   color: white !important;
 }
 
+.buyNow:active {
+  color: #8ab83e !important;
+}
+
 .buttonDiv {
   display: flex;
   flex-direction: row;

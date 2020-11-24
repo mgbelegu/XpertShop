@@ -31,3 +31,15 @@
 .logoutIcon {
   height: 50px;
 }
+
+@media (max-width: 1055px) {
+  .cart {
+    margin: 16px 42px;
+  }
+}
+
+@media (max-width: 620px) {
+  .cart {
+    margin: 16px;
+  }
+}

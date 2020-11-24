@@ -27,3 +27,15 @@
   color: black;
   font-weight: bold;
 }
+
+@media (max-width: 1055px) {
+  .orders {
+    margin: 16px 42px;
+  }
+}
+
+@media (max-width: 620px) {
+  .orders {
+    margin: 16px;
+  }
+}

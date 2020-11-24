@@ -43,3 +43,18 @@
 .ordersIcon {
   height: 85px;
 }
+
+@media (max-width: 1055px) {
+  .profile {
+    margin: 16px 42px;
+  }
+}
+
+@media (max-width: 620px) {
+  .profileContainer {
+    flex-direction: column;
+  }
+  .profile {
+    margin: 16px;
+  }
+}
