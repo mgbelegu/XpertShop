@@ -4,6 +4,7 @@ import "./orders.css";
 import Layout from "../layout/layout";
 import LoginIcon from "../../assets/loginicon.png";
 import { NavLink } from "react-router-dom";
+import logoutIcon from "../../assets/Exit.png";
 
 class Orders extends Component {
   render() {
@@ -24,7 +25,6 @@ class Orders extends Component {
         <div className="orders">
           <div className="ordersHeader">
             <h1>Porositë e juaja</h1>
-            <a href="/logout">Dilni</a>
           </div>
 
           <div className="ordersContainer">

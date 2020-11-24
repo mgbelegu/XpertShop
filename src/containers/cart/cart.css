@@ -27,3 +27,8 @@
   color: black;
   font-weight: bold;
 }
+
+.logoutIcon {
+  height: 30px;
+  image-rendering: pixelated;
+}

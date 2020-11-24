@@ -4,6 +4,7 @@ import "./profile.css";
 import Layout from "../layout/layout";
 import LoginIcon from "../../assets/loginicon.png";
 import { NavLink } from "react-router-dom";
+import logoutIcon from "../../assets/Exit.png";
 
 class Profile extends Component {
   render() {
@@ -24,7 +25,14 @@ class Profile extends Component {
         <div className="profile">
           <div className="profileHeader">
             <h1>Mirë se vjen në profilin tënd personal!</h1>
-            <a href="/logout">Dilni</a>
+            <a href="/logout">
+              <img
+                className="logoutIcon"
+                src={logoutIcon}
+                alt=""
+                title="Dilni"
+              />
+            </a>
           </div>
 
           <div className="profileContainer">
