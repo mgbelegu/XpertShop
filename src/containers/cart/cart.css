@@ -10,7 +10,7 @@
 }
 
 .cartContainer {
-  margin: 48px;
+  margin: 72px;
   position: relative;
 }
 
@@ -47,6 +47,10 @@
   background-color: #0a3637;
   cursor: pointer;
   font-weight: bold;
+}
+
+.checkoutButton:active {
+  color: #8ab83e;
 }
 
 @media (max-width: 1055px) {

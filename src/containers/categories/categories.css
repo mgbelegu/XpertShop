@@ -30,6 +30,12 @@
   flex-wrap: nowrap;
 }
 
+@media (max-width: 550px) {
+  .categoriesContainer {
+    flex-wrap: wrap;
+  }
+}
+
 .categoriesContainer div {
   margin: 4px;
 }

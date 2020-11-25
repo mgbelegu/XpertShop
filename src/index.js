@@ -6,13 +6,15 @@ import { createStore, applyMiddleware, compose, combineReducers } from "redux";
 import thunk from "redux-thunk";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import reducer from "./containers/store/products";
+import productReducer from "./containers/store/products";
+import orderReducer from "./containers/store/orders-reducer";
 import authReducer from "./containers/store/authreducer";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const rootReducer = combineReducers({
-  products: reducer,
+  orders: orderReducer,
+  products: productReducer,
   auth: authReducer,
 });
 

@@ -1,13 +1,19 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import * as actions from "../store/actions/index";
 import "./cart.css";
 import Layout from "../layout/layout";
 import LoginIcon from "../../assets/loginicon.png";
 import { NavLink } from "react-router-dom";
 import CartProduct from "./cartProduct/cartProduct";
 import CartTotal from "./cartTotal/cartTotal";
+import Spinner from "../ui/spinner/spinner";
 
 class Cart extends Component {
+  componentDidMount() {
+    this.props.onFetchOrders();
+  }
+
   render() {
     let cartAuthenticated = (
       <div className="notLoggedIn">
@@ -21,6 +27,40 @@ class Cart extends Component {
       </div>
     );
 
+    let showCart = (
+      <tr>
+        <td
+          style={{ width: "100%", margin: "0 auto !important" }}
+          colSpan="100%"
+        >
+          <Spinner />
+        </td>
+      </tr>
+    );
+
+    if (!this.props.loading) {
+      let cartProductList = this.props.orders.map((orderItem, i) => (
+        <CartProduct
+          key={i}
+          productImage={orderItem.productImage}
+          productTitle={orderItem.productTitle}
+          productPrice={orderItem.productPrice}
+          productCount={orderItem.productCount}
+        />
+      ));
+      if (cartProductList != "") {
+        showCart = cartProductList;
+      } else {
+        showCart = (
+          <tr>
+            <td colSpan="100%" style={{ padding: "30px" }}>
+              Shporta juaj është bosh!
+            </td>
+          </tr>
+        );
+      }
+    }
+
     if (this.props.isAuthenticated) {
       cartAuthenticated = (
         <div className="cart">
@@ -30,10 +70,21 @@ class Cart extends Component {
 
           <div className="cartContainer">
             <h3>Produktet:</h3>
-            <CartProduct />
-            <CartProduct />
-            <CartProduct />
-            <CartProduct />
+            <table id="cart">
+              <tbody>
+                <tr>
+                  <th id="delTH"></th>
+                  <th id="imageTH"></th>
+                  <th className="productCell">
+                    <h4>Produkti</h4>
+                  </th>
+                  <th id="priceTH">Cmimi</th>
+                  <th id="countTH">Sasia</th>
+                </tr>
+                {showCart}
+              </tbody>
+            </table>
+
             <CartTotal />
             <button className="checkoutButton">Bëje porosinë</button>
           </div>
@@ -48,7 +99,15 @@ class Cart extends Component {
 const mapStateToProps = (state) => {
   return {
     isAuthenticated: state.auth.token !== null,
+    orders: state.orders.orders,
+    loading: state.orders.loading,
   };
 };
 
-export default connect(mapStateToProps)(Cart);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onFetchOrders: () => dispatch(actions.fetchOrders()),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Cart);
