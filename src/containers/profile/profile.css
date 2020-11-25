@@ -27,6 +27,17 @@
   margin: 200px auto;
 }
 
+@media (max-width: 550px) {
+  .notLoggedIn {
+    width: auto;
+    margin: 200px 8px;
+  }
+
+  .notLoggedIn img {
+    height: 150px;
+  }
+}
+
 .notLoggedIn img {
   margin-top: 36px;
 }

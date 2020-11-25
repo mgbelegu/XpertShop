@@ -2,6 +2,25 @@ form {
   width: 500px;
   margin-left: auto;
   margin-right: auto;
+  transition: all 0.2s ease-in-out;
+}
+
+@media (max-width: 550px) {
+  .shopLogo {
+    height: 150px !important;
+  }
+  form {
+    width: 400px;
+  }
+}
+
+@media (max-width: 450px) {
+  .shopLogo {
+    height: 100px !important;
+  }
+  form {
+    width: 250px;
+  }
 }
 
 .shopLogo {
@@ -11,6 +30,7 @@ form {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  transition: all 0.2s ease-in-out;
 }
 
 .loginButton {
