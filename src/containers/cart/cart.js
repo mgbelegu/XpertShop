@@ -6,7 +6,6 @@ import Layout from "../layout/layout";
 import LoginIcon from "../../assets/loginicon.png";
 import { NavLink } from "react-router-dom";
 import CartProduct from "./cartProduct/cartProduct";
-import CartTotal from "./cartTotal/cartTotal";
 import Spinner from "../ui/spinner/spinner";
 
 class Cart extends Component {
@@ -38,14 +37,20 @@ class Cart extends Component {
       </tr>
     );
 
+    let productTotalPrice = <h4>0 ALL</h4>;
+    let total = 0;
+    productTotalPrice = this.props.orders.map(
+      (orderItem, i) => (total = total + orderItem.productPrice)
+    );
+
     if (!this.props.loading) {
       let cartProductList = this.props.orders.map((orderItem, i) => (
         <CartProduct
           key={i}
           productImage={orderItem.productImage}
           productTitle={orderItem.productTitle}
-          productPrice={orderItem.productPrice}
-          productCount={orderItem.productCount}
+          productPrice={Number(orderItem.productPrice).toLocaleString()}
+          productId={orderItem.productId}
         />
       ));
       if (cartProductList != "") {
@@ -85,7 +90,10 @@ class Cart extends Component {
               </tbody>
             </table>
 
-            <CartTotal />
+            <div className="cartTotal">
+              <h4>Totali: </h4>
+              <h4>{Number(total).toLocaleString()} ALL</h4>
+            </div>
             <button className="checkoutButton">Bëje porosinë</button>
           </div>
         </div>

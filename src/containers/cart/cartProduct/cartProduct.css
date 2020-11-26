@@ -52,6 +52,12 @@ td img {
   text-align: left;
 }
 
+.productCell a {
+  color: #0a3637;
+  text-decoration: none;
+  font-weight: bolder;
+}
+
 td,
 th {
   padding: 8px;

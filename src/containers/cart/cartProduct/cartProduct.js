@@ -1,18 +1,34 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import "./cartProduct.css";
 
 class CartProduct extends Component {
+  state = {
+    productCount: 1,
+  };
+
   constructor(props) {
     super(props);
-    this.state = { value: this.props.productCount };
-
-    this.inputNumberHandler = this.inputNumberHandler.bind(this);
+    this.productCountIncreaseHandler = this.productCountIncreaseHandler.bind(
+      this
+    );
+    this.productCountDecreaseHandler = this.productCountDecreaseHandler.bind(
+      this
+    );
   }
 
-  inputNumberHandler(event) {
+  productCountIncreaseHandler() {
     this.setState({
-      value: event.target.value,
+      productCount: this.state.productCount + 1,
     });
+  }
+
+  productCountDecreaseHandler() {
+    if (this.state.productCount !== 0) {
+      this.setState({
+        productCount: this.state.productCount - 1,
+      });
+    }
   }
 
   render() {
@@ -25,19 +41,22 @@ class CartProduct extends Component {
           <img src={this.props.productImage} alt="" />
         </td>
         <td className="productCell">
-          <h4>{this.props.productTitle}</h4>
+          <Link
+            to={{
+              pathname: `/products/${this.props.productId}`,
+              state: this.props,
+            }}
+          >
+            {this.props.productTitle}
+          </Link>
         </td>
         <td>
-          <h4>ALL {this.props.productPrice}</h4>
+          <h4>{this.props.productPrice} ALL</h4>
         </td>
         <td>
-          <input
-            type="number"
-            min="1"
-            max="100"
-            value={this.state.value}
-            onChange={this.inputNumberHandler}
-          ></input>
+          <button onClick={this.productCountIncreaseHandler}>+</button>
+          <p>{this.state.productCount}</p>
+          <button onClick={this.productCountDecreaseHandler}>-</button>
         </td>
       </tr>
     );

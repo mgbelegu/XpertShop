@@ -5,6 +5,7 @@ import { Provider } from "react-redux";
 import { createStore, applyMiddleware, compose, combineReducers } from "redux";
 import thunk from "redux-thunk";
 import App from "./App";
+import ScrollToTop from "./containers/hoc/ScrollToTop";
 import reportWebVitals from "./reportWebVitals";
 import productReducer from "./containers/store/products";
 import orderReducer from "./containers/store/orders-reducer";
@@ -26,7 +27,9 @@ const store = createStore(
 const app = (
   <Provider store={store}>
     <BrowserRouter basename={process.env.PUBLIC_URL}>
-      <App />
+      <ScrollToTop>
+        <App />
+      </ScrollToTop>
     </BrowserRouter>
   </Provider>
 );

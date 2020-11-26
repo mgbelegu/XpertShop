@@ -24,6 +24,7 @@ class Store extends Component {
           productTitle={productItem.title}
           productDescription={productItem.description}
           productPrice={productItem.price}
+          productId={productItem.id}
         />
       ));
     }
@@ -85,7 +86,7 @@ class Store extends Component {
         <div className="newProducts">
           <div className="newProductsHeader">
             <h1>Produktet e reja</h1>
-            <NavLink to="/newproducts">
+            <NavLink to="/new-products">
               Të gjitha <img className="chevron" src={chevron} alt="" />
             </NavLink>
           </div>

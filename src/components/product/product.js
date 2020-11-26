@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { Component } from "react";
-import { Redirect } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import "./product.css";
 
 class Product extends Component {
@@ -54,9 +54,18 @@ class Product extends Component {
         {redirectCart}
         <div>
           <img src={this.props.productImage} alt="" />
-          <h3>{this.props.productTitle}</h3>
+          <Link
+            to={{
+              pathname: `/products/${this.state.specifications.productId}`,
+              state: this.state.specifications,
+            }}
+          >
+            {this.props.productTitle}
+          </Link>
           <p>{this.props.productDescription}</p>
-          <p className="price">ALL {this.props.productPrice}</p>
+          <p className="price">
+            {Number(this.props.productPrice).toLocaleString()} ALL
+          </p>
           {productButtons}
         </div>
       </div>

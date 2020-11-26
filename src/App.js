@@ -14,6 +14,8 @@ import Profile from "./containers/profile/profile";
 import Footer from "./containers/footer/footer";
 import * as actions from "./containers/store/actions/index";
 import "./App.css";
+import NewProducts from "./containers/home/newProducts/newProducts";
+import ProductPage from "./components/product/productPage/productPage";
 
 class App extends Component {
   componentDidMount() {
@@ -30,6 +32,8 @@ class App extends Component {
           <Route path="/profili" component={Profile} />
           <Route path="/kycu" component={LoginForm} />
           <Route path="/categories" component={Categories} />
+          <Route path="/new-products" component={NewProducts} />
+          <Route path="/products/" component={ProductPage} />
           <Route path="/logout" component={Logout} />
           <Route path="/" exact component={Store} />
         </Switch>

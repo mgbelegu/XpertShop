@@ -26,6 +26,7 @@
   outline: none;
   background-color: white;
   cursor: pointer;
+  font-weight: bold;
 }
 
 .buyNow {
@@ -44,7 +45,17 @@
 }
 
 .productContainer img {
+  display: block;
   width: 100%;
+  max-width: 300px;
+  margin-bottom: 16px;
+}
+
+.productContainer a {
+  color: #0a3637;
+  font-weight: bolder;
+  text-decoration: none;
+  font-size: 20px;
 }
 
 .price {
