@@ -57,7 +57,15 @@ class Product extends Component {
           <Link
             to={{
               pathname: `/products/${this.state.specifications.productId}`,
-              state: this.state.specifications,
+              state: {
+                productTitle: this.state.specifications.productTitle,
+                productImage: this.state.specifications.productImage,
+                productDescription: this.state.specifications
+                  .productDescription,
+                productPrice: Number(
+                  this.state.specifications.productPrice
+                ).toLocaleString(),
+              },
             }}
           >
             {this.props.productTitle}

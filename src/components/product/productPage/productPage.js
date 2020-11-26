@@ -14,7 +14,7 @@ class ProductPage extends Component {
         <div className="productInfoSection">
           <div>
             <h1>{this.state.productTitle}</h1>
-            <h2>{Number(this.state.productPrice).toLocaleString()} ALL</h2>
+            <h2>{this.state.productPrice} ALL</h2>
             <p>{this.state.productDescription}</p>
           </div>
 
