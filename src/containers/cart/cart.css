@@ -1,5 +1,5 @@
 .cart {
-  margin: 16px 128px 75px;
+  margin: 16px 64px 75px;
 }
 
 .cartHeader {
@@ -10,7 +10,6 @@
 }
 
 .cartContainer {
-  margin: 72px;
   position: relative;
 }
 

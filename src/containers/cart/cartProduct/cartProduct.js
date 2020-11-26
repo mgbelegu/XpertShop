@@ -5,6 +5,7 @@ import "./cartProduct.css";
 class CartProduct extends Component {
   state = {
     productCount: 1,
+    price: this.props.productPrice,
   };
 
   constructor(props) {
@@ -32,6 +33,10 @@ class CartProduct extends Component {
   }
 
   render() {
+    let price = this.state.price;
+    let priceWithoutComma = parseFloat(price.replace(/,/g, ""));
+    priceWithoutComma = priceWithoutComma * this.state.productCount;
+
     return (
       <tr className="cartProduct">
         <td>
@@ -51,12 +56,22 @@ class CartProduct extends Component {
           </Link>
         </td>
         <td>
-          <h4>{this.props.productPrice} ALL</h4>
+          <h4>{Number(priceWithoutComma).toLocaleString()} ALL</h4>
         </td>
         <td>
-          <button onClick={this.productCountIncreaseHandler}>+</button>
-          <p>{this.state.productCount}</p>
-          <button onClick={this.productCountDecreaseHandler}>-</button>
+          <button
+            className="countButton"
+            onClick={this.productCountIncreaseHandler}
+          >
+            +
+          </button>
+          <p className="Counter">{this.state.productCount}</p>
+          <button
+            className="countButton"
+            onClick={this.productCountDecreaseHandler}
+          >
+            -
+          </button>
         </td>
       </tr>
     );
