@@ -42,7 +42,17 @@ class Cart extends Component {
       </tr>
     );
 
+<<<<<<< HEAD
     if (!this.props.orders.loading) {
+=======
+    let productTotalPrice = <h4>0 ALL</h4>;
+    let total = 0;
+    productTotalPrice = this.props.orders.map(
+      (orderItem, i) => (total = total + orderItem.productPrice)
+    );
+
+    if (!this.props.loading) {
+>>>>>>> parent of 70aee30... Update cart.js
       let cartProductList = this.props.orders.map((orderItem, i) => (
         <CartProduct
           key={i}
