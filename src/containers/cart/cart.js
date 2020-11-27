@@ -26,6 +26,11 @@ class Cart extends Component {
       </div>
     );
 
+    let total = 0;
+    this.props.orders.map(
+      (orderItem, i) => (total = total + orderItem.productPrice)
+    );
+
     let showCart = (
       <tr>
         <td
@@ -37,12 +42,7 @@ class Cart extends Component {
       </tr>
     );
 
-    let total = 0;
-    this.props.orders.map(
-      (orderItem, i) => (total = total + orderItem.productPrice)
-    );
-
-    if (!this.props.loading) {
+    if (!this.props.orders.loading) {
       let cartProductList = this.props.orders.map((orderItem, i) => (
         <CartProduct
           key={i}
@@ -52,6 +52,7 @@ class Cart extends Component {
           productId={orderItem.productId}
         />
       ));
+
       if (cartProductList != "") {
         showCart = cartProductList;
       } else {
@@ -83,7 +84,6 @@ class Cart extends Component {
                     <h4>Produkti</h4>
                   </th>
                   <th id="priceTH">Cmimi</th>
-                  <th id="countTH">Sasia</th>
                 </tr>
                 {showCart}
               </tbody>
@@ -118,3 +118,8 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Cart);
+
+/*
+Count Row Code:
+ <th id="countTH">Sasia</th>
+*/

@@ -8,7 +8,7 @@ class CartProduct extends Component {
     price: this.props.productPrice,
   };
 
-  constructor(props) {
+  /*constructor(props) {
     super(props);
     this.productCountIncreaseHandler = this.productCountIncreaseHandler.bind(
       this
@@ -30,7 +30,7 @@ class CartProduct extends Component {
         productCount: this.state.productCount - 1,
       });
     }
-  }
+  }*/
 
   render() {
     let price = this.state.price;
@@ -58,7 +58,16 @@ class CartProduct extends Component {
         <td>
           <h4>{Number(priceWithoutComma).toLocaleString()} ALL</h4>
         </td>
-        <td>
+      </tr>
+    );
+  }
+}
+
+export default CartProduct;
+
+/*
+Count row code:
+<td>
           <button
             className="countButton"
             onClick={this.productCountIncreaseHandler}
@@ -73,9 +82,4 @@ class CartProduct extends Component {
             -
           </button>
         </td>
-      </tr>
-    );
-  }
-}
-
-export default CartProduct;
+*/
