@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/XpertShop/static/css/main.3363ad71.chunk.css",
+    "main.js": "/XpertShop/static/js/main.64820c3e.chunk.js",
+    "main.js.map": "/XpertShop/static/js/main.64820c3e.chunk.js.map",
+    "runtime-main.js": "/XpertShop/static/js/runtime-main.65f6b102.js",
+    "runtime-main.js.map": "/XpertShop/static/js/runtime-main.65f6b102.js.map",
+    "static/js/2.b1df2029.chunk.js": "/XpertShop/static/js/2.b1df2029.chunk.js",
+    "static/js/2.b1df2029.chunk.js.map": "/XpertShop/static/js/2.b1df2029.chunk.js.map",
+    "static/js/3.ba87a24f.chunk.js": "/XpertShop/static/js/3.ba87a24f.chunk.js",
+    "static/js/3.ba87a24f.chunk.js.map": "/XpertShop/static/js/3.ba87a24f.chunk.js.map",
+    "index.html": "/XpertShop/index.html",
+    "static/css/main.3363ad71.chunk.css.map": "/XpertShop/static/css/main.3363ad71.chunk.css.map",
+    "static/js/2.b1df2029.chunk.js.LICENSE.txt": "/XpertShop/static/js/2.b1df2029.chunk.js.LICENSE.txt",
+    "static/media/cartProduct.css": "/XpertShop/static/media/DeleteRed.030ba738.svg",
+    "static/media/Exit.4e4a3041.svg": "/XpertShop/static/media/Exit.4e4a3041.svg",
+    "static/media/Home.455ad47d.svg": "/XpertShop/static/media/Home.455ad47d.svg",
+    "static/media/Porosite.c0ff6545.svg": "/XpertShop/static/media/Porosite.c0ff6545.svg",
+    "static/media/Porosite2.9c9199bd.svg": "/XpertShop/static/media/Porosite2.9c9199bd.svg",
+    "static/media/Profili.a9adb5e5.svg": "/XpertShop/static/media/Profili.a9adb5e5.svg",
+    "static/media/Shopping.5a9e8284.svg": "/XpertShop/static/media/Shopping.5a9e8284.svg",
+    "static/media/Shopping2.5626e197.svg": "/XpertShop/static/media/Shopping2.5626e197.svg",
+    "static/media/shop.baa04878.png": "/XpertShop/static/media/shop.baa04878.png",
+    "static/media/xpertshoplogo.1f0332bd.svg": "/XpertShop/static/media/xpertshoplogo.1f0332bd.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.65f6b102.js",
+    "static/js/2.b1df2029.chunk.js",
+    "static/css/main.3363ad71.chunk.css",
+    "static/js/main.64820c3e.chunk.js"
+  ]
+}
