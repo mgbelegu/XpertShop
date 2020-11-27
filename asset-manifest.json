@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/XpertShop/static/css/main.38e9325e.chunk.css",
-    "main.js": "/XpertShop/static/js/main.58b0699a.chunk.js",
-    "main.js.map": "/XpertShop/static/js/main.58b0699a.chunk.js.map",
+    "main.js": "/XpertShop/static/js/main.7f6c8cd1.chunk.js",
+    "main.js.map": "/XpertShop/static/js/main.7f6c8cd1.chunk.js.map",
     "runtime-main.js": "/XpertShop/static/js/runtime-main.65f6b102.js",
     "runtime-main.js.map": "/XpertShop/static/js/runtime-main.65f6b102.js.map",
     "static/js/2.e3686155.chunk.js": "/XpertShop/static/js/2.e3686155.chunk.js",
@@ -27,6 +27,6 @@
     "static/js/runtime-main.65f6b102.js",
     "static/js/2.e3686155.chunk.js",
     "static/css/main.38e9325e.chunk.css",
-    "static/js/main.58b0699a.chunk.js"
+    "static/js/main.7f6c8cd1.chunk.js"
   ]
 }
