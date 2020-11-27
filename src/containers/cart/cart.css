@@ -80,3 +80,7 @@
 .cartTotal h4 {
   margin: 0;
 }
+
+#updateCountTH {
+  width: 100px;
+}

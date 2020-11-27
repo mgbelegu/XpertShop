@@ -109,8 +109,6 @@ input {
   outline: none;
   background-color: white;
   border-radius: 4px;
-  width: 50px;
-  height: 30px;
   color: #0a3637;
   transition: all 0.1s ease-in-out;
   cursor: pointer;
@@ -130,4 +128,5 @@ input {
 .Counter {
   margin: 8px 0;
   font-weight: bold;
+  width: 40px;
 }

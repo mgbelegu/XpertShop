@@ -7,6 +7,7 @@ import LoginIcon from "../../assets/loginicon.png";
 import { NavLink } from "react-router-dom";
 import CartProduct from "./cartProduct/cartProduct";
 import Spinner from "../ui/spinner/spinner";
+import TotalCart from "./totalCart/totalCart";
 
 class Cart extends Component {
   componentDidMount() {
@@ -26,11 +27,6 @@ class Cart extends Component {
       </div>
     );
 
-    let total = 0;
-    this.props.orders.map(
-      (orderItem, i) => (total = total + orderItem.productPrice)
-    );
-
     let showCart = (
       <tr>
         <td
@@ -42,28 +38,29 @@ class Cart extends Component {
       </tr>
     );
 
-<<<<<<< HEAD
-    if (!this.props.orders.loading) {
-=======
-    let productTotalPrice = <h4>0 ALL</h4>;
     let total = 0;
-    productTotalPrice = this.props.orders.map(
-      (orderItem, i) => (total = total + orderItem.productPrice)
+    this.props.orders.map(
+      (orderItem, i) =>
+        (total = total + orderItem.productPrice * orderItem.productCount)
     );
 
     if (!this.props.loading) {
->>>>>>> parent of 70aee30... Update cart.js
-      let cartProductList = this.props.orders.map((orderItem, i) => (
-        <CartProduct
-          key={i}
-          productImage={orderItem.productImage}
-          productTitle={orderItem.productTitle}
-          productPrice={Number(orderItem.productPrice).toLocaleString()}
-          productId={orderItem.productId}
-        />
-      ));
+      let cartProductList = this.props.orders.map((orderItem, i) => {
+        if (orderItem.productCount !== 0)
+          return (
+            <CartProduct
+              key={i}
+              productImage={orderItem.productImage}
+              productTitle={orderItem.productTitle}
+              productPrice={Number(orderItem.productPrice).toLocaleString()}
+              productId={orderItem.productId}
+              productDescription={orderItem.productDescription}
+              productCount={orderItem.productCount}
+            />
+          );
+      });
 
-      if (cartProductList != "") {
+      if (cartProductList !== "") {
         showCart = cartProductList;
       } else {
         showCart = (
@@ -94,15 +91,14 @@ class Cart extends Component {
                     <h4>Produkti</h4>
                   </th>
                   <th id="priceTH">Cmimi</th>
+                  <th id="countTH">Sasia</th>
+                  <th id="updateCountTH"></th>
                 </tr>
                 {showCart}
               </tbody>
             </table>
 
-            <div className="cartTotal">
-              <h4>Totali: </h4>
-              <h4>{Number(total).toLocaleString()} ALL</h4>
-            </div>
+            <TotalCart totalPrice={total} />
             <button className="checkoutButton">Bëje porosinë</button>
           </div>
         </div>
@@ -128,8 +124,3 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Cart);
-
-/*
-Count Row Code:
- <th id="countTH">Sasia</th>
-*/

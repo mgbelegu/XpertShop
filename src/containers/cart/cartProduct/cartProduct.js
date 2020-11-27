@@ -1,36 +1,62 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./cartProduct.css";
+import axios from "axios";
 
 class CartProduct extends Component {
   state = {
-    productCount: 1,
+    id: this.props.productId,
+    productCount: this.props.productCount,
     price: this.props.productPrice,
+    value: this.props.productCount,
   };
 
-  /*constructor(props) {
+  constructor(props) {
     super(props);
-    this.productCountIncreaseHandler = this.productCountIncreaseHandler.bind(
-      this
-    );
-    this.productCountDecreaseHandler = this.productCountDecreaseHandler.bind(
-      this
-    );
+    this.productCountHandler = this.productCountHandler.bind(this);
   }
 
-  productCountIncreaseHandler() {
+  productCountHandler(event) {
     this.setState({
-      productCount: this.state.productCount + 1,
+      value: event.target.value,
     });
   }
 
-  productCountDecreaseHandler() {
-    if (this.state.productCount !== 0) {
-      this.setState({
-        productCount: this.state.productCount - 1,
+  updateCountHandler = () => {
+    axios
+      .put(
+        `https://xpert-ecommerce.firebaseio.com/orders/` +
+          this.state.id +
+          `/productCount` +
+          `.json`,
+        this.state.value
+      )
+      .then((response) => {
+        this.setState({ loading: false, redirect: true });
+        window.location.reload();
+      })
+      .catch((error) => {
+        this.setState({ loading: false });
       });
-    }
-  }*/
+  };
+
+  deleteHandler = () => {
+    axios
+      .put(
+        `https://xpert-ecommerce.firebaseio.com/orders/` +
+          this.state.id +
+          `/productCount` +
+          `.json`,
+        "0"
+      )
+      .then((response) => {
+        this.setState({ loading: false, redirect: true });
+        window.location.reload();
+      })
+      .catch((error) => {
+        this.setState({ loading: false });
+      });
+  };
 
   render() {
     let price = this.state.price;
@@ -40,7 +66,10 @@ class CartProduct extends Component {
     return (
       <tr className="cartProduct">
         <td>
-          <button className="deleteButton"></button>
+          <button
+            className="deleteButton"
+            onClick={this.deleteHandler}
+          ></button>
         </td>
         <td className="imageCell">
           <img src={this.props.productImage} alt="" />
@@ -58,28 +87,23 @@ class CartProduct extends Component {
         <td>
           <h4>{Number(priceWithoutComma).toLocaleString()} ALL</h4>
         </td>
+        <td>
+          <input
+            type="number"
+            min="0"
+            className="Counter"
+            value={this.state.value}
+            onChange={this.productCountHandler}
+          ></input>
+        </td>
+        <td>
+          <button className="countButton" onClick={this.updateCountHandler}>
+            Përditëso sasinë
+          </button>
+        </td>
       </tr>
     );
   }
 }
 
 export default CartProduct;
-
-/*
-Count row code:
-<td>
-          <button
-            className="countButton"
-            onClick={this.productCountIncreaseHandler}
-          >
-            +
-          </button>
-          <p className="Counter">{this.state.productCount}</p>
-          <button
-            className="countButton"
-            onClick={this.productCountDecreaseHandler}
-          >
-            -
-          </button>
-        </td>
-*/

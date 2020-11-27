@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { Component } from "react";
 import { Link, Redirect } from "react-router-dom";
+import Spinner from "./spinner/spinner";
 import "./product.css";
 
 class Product extends Component {
@@ -17,10 +18,15 @@ class Product extends Component {
       loading: true,
     });
     let productCartSpecifications = {};
-    productCartSpecifications = this.state.specifications;
+    productCartSpecifications = {
+      ...this.state.specifications,
+      productCount: 1,
+    };
     axios
-      .post(
-        "https://xpert-ecommerce.firebaseio.com/orders.json",
+      .put(
+        `https://xpert-ecommerce.firebaseio.com/orders/` +
+          productCartSpecifications.productId +
+          `.json`,
         productCartSpecifications
       )
       .then((response) => {
@@ -34,15 +40,21 @@ class Product extends Component {
   render() {
     let productButtons = (
       <div className="buttonDiv">
-        <button onClick={this.addToCartHandler}>SHTO NË SHPORTË</button>
-        <button className="buyNow">BLI TANI</button>
+        <div>
+          <p className="price">
+            {Number(this.props.productPrice).toLocaleString()} ALL
+          </p>
+        </div>
+
+        <div>
+          <button onClick={this.addToCartHandler}>SHTO NË SHPORTË</button>
+          <button className="buyNow">BLI TANI</button>
+        </div>
       </div>
     );
 
     if (this.state.loading) {
-      productButtons = (
-        <p style={{ textAlign: "center" }}>Po shtohet në shportë...</p>
-      );
+      productButtons = <Spinner />;
     }
 
     let redirectCart = null;
@@ -52,30 +64,24 @@ class Product extends Component {
     return (
       <div className="productContainer">
         {redirectCart}
-        <div>
-          <img src={this.props.productImage} alt="" />
-          <Link
-            to={{
-              pathname: `/products/${this.state.specifications.productId}`,
-              state: {
-                productTitle: this.state.specifications.productTitle,
-                productImage: this.state.specifications.productImage,
-                productDescription: this.state.specifications
-                  .productDescription,
-                productPrice: Number(
-                  this.state.specifications.productPrice
-                ).toLocaleString(),
-              },
-            }}
-          >
-            {this.props.productTitle}
-          </Link>
-          <p>{this.props.productDescription}</p>
-          <p className="price">
-            {Number(this.props.productPrice).toLocaleString()} ALL
-          </p>
-          {productButtons}
-        </div>
+        <img src={this.props.productImage} alt="" />
+        <Link
+          to={{
+            pathname: `/products/${this.state.specifications.productId}`,
+            state: {
+              productTitle: this.state.specifications.productTitle,
+              productImage: this.state.specifications.productImage,
+              productDescription: this.state.specifications.productDescription,
+              productPrice: Number(
+                this.state.specifications.productPrice
+              ).toLocaleString(),
+            },
+          }}
+        >
+          {this.props.productTitle}
+        </Link>
+        <p>{this.props.productDescription}</p>
+        {productButtons}
       </div>
     );
   }
