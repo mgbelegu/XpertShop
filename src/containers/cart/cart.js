@@ -37,9 +37,8 @@ class Cart extends Component {
       </tr>
     );
 
-    let productTotalPrice = <h4>0 ALL</h4>;
     let total = 0;
-    productTotalPrice = this.props.orders.map(
+    this.props.orders.map(
       (orderItem, i) => (total = total + orderItem.productPrice)
     );
 
