@@ -1,0 +1,132 @@
+.cartProduct {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  color: black;
+}
+
+#cart {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+tr {
+  border: 1px solid #ddd;
+}
+
+tr:first-child {
+  background-color: #0a3637;
+}
+
+tr:first-child th {
+  color: white;
+  padding: 8px;
+}
+
+td img {
+  height: 50px;
+}
+
+#delTH {
+  width: 50px;
+}
+
+#imageTH {
+  width: 70px;
+}
+
+#priceTH {
+  width: 100px;
+}
+
+#countTH {
+  width: 70px;
+}
+
+.imageCell {
+  text-align: left;
+}
+
+.productCell {
+  text-align: left;
+}
+
+.productCell a {
+  color: #0a3637;
+  text-decoration: none;
+  font-weight: bolder;
+}
+
+td,
+th {
+  padding: 8px;
+  text-align: center;
+}
+
+input {
+  padding: 8px;
+  border: 1px solid #ddd;
+  outline: none;
+}
+
+.deleteButton {
+  background-image: url(../../../assets/Delete.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: white;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
+  display: block;
+}
+
+.deleteButton:hover {
+  background-image: url(../../../assets/DeleteRed.svg);
+}
+
+@media (max-width: 1055px) {
+  .cartContainer {
+    margin: 24px 0px 72px;
+  }
+}
+
+@media (max-width: 500px) {
+  #cart h4 {
+    font-size: 16px;
+  }
+  #cart td,
+  th {
+    padding: 4px;
+  }
+}
+
+.countButton {
+  border: 2px solid #ccc;
+  outline: none;
+  background-color: white;
+  border-radius: 4px;
+  color: #0a3637;
+  transition: all 0.1s ease-in-out;
+  cursor: pointer;
+}
+
+.countButton:hover {
+  border: 2px solid #0a3637;
+  box-shadow: 0 0 2px 2px #ccc;
+  background-color: #0a3637;
+  color: white;
+}
+
+.countButton:active {
+  color: #8ab83e;
+}
+
+.Counter {
+  margin: 8px 0;
+  font-weight: bold;
+  width: 40px;
+}
