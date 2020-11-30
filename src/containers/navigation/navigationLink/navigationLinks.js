@@ -11,9 +11,9 @@ class navigationLinks extends Component {
     return (
       <ul className={this.props.classes}>
         <li className="homeLink">
-          <a href="/XpertShop/">
+          <NavLink to="/">
             <img className="navIcons" src={HomeIcon} alt="Home" />
-          </a>
+          </NavLink>
         </li>
         {this.props.isAuthenticated ? (
           <li className="cartLink">

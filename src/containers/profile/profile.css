@@ -1,5 +1,5 @@
 .profile {
-  margin: 16px 128px;
+  margin: 16px 64px 75px;
 }
 
 .profileHeader {
@@ -10,7 +10,6 @@
 }
 
 .profileContainer {
-  margin: 48px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;

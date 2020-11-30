@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import "./profile.css";
 import Layout from "../layout/layout";
 import LoginIcon from "../../assets/loginicon.png";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import logoutIcon from "../../assets/Exit.svg";
 import cartIcon from "../../assets/Shopping2.svg";
 import ordersIcon from "../../assets/Porosite2.svg";
@@ -27,14 +27,14 @@ class Profile extends Component {
         <div className="profile">
           <div className="profileHeader">
             <h1>Mirë se vjen në profilin tënd personal!</h1>
-            <a href="/XpertShop/logout">
+            <NavLink to="/logout">
               <img
                 className="logoutIcon"
                 src={logoutIcon}
                 alt=""
                 title="Dilni"
               />
-            </a>
+            </NavLink>
           </div>
 
           <div className="profileContainer">

@@ -61,20 +61,35 @@ class Product extends Component {
     if (this.state.redirect) {
       redirectCart = <Redirect to="/shporta" />;
     }
+
     return (
       <div className="productContainer">
         {redirectCart}
-        <img src={this.props.productImage} alt="" />
         <Link
           to={{
             pathname: `/products/${this.state.specifications.productId}`,
             state: {
+              productId: this.state.specifications.productId,
               productTitle: this.state.specifications.productTitle,
               productImage: this.state.specifications.productImage,
               productDescription: this.state.specifications.productDescription,
-              productPrice: Number(
-                this.state.specifications.productPrice
-              ).toLocaleString(),
+              productPrice: this.state.specifications.productPrice,
+            },
+          }}
+        >
+          {" "}
+          <img src={this.props.productImage} alt="" />
+        </Link>
+
+        <Link
+          to={{
+            pathname: `/products/${this.state.specifications.productId}`,
+            state: {
+              productId: this.state.specifications.productId,
+              productTitle: this.state.specifications.productTitle,
+              productImage: this.state.specifications.productImage,
+              productDescription: this.state.specifications.productDescription,
+              productPrice: this.state.specifications.productPrice,
             },
           }}
         >

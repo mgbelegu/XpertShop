@@ -33,7 +33,7 @@ class CartProduct extends Component {
       )
       .then((response) => {
         this.setState({ loading: false, redirect: true });
-        window.location.reload();
+        window.location.reload(false);
       })
       .catch((error) => {
         this.setState({ loading: false });
@@ -51,7 +51,7 @@ class CartProduct extends Component {
       )
       .then((response) => {
         this.setState({ loading: false, redirect: true });
-        window.location.reload();
+        window.location.reload(false);
       })
       .catch((error) => {
         this.setState({ loading: false });
@@ -59,10 +59,6 @@ class CartProduct extends Component {
   };
 
   render() {
-    let price = this.state.price;
-    let priceWithoutComma = parseFloat(price.replace(/,/g, ""));
-    priceWithoutComma = priceWithoutComma * this.state.productCount;
-
     return (
       <tr className="cartProduct">
         <td>
@@ -85,7 +81,7 @@ class CartProduct extends Component {
           </Link>
         </td>
         <td>
-          <h4>{Number(priceWithoutComma).toLocaleString()} ALL</h4>
+          <h4>{this.props.productPrice} ALL</h4>
         </td>
         <td>
           <input

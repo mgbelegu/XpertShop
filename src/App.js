@@ -23,25 +23,35 @@ class App extends Component {
   }
 
   render() {
+    let routes = (
+      <Switch>
+        <Route path="/regjistrohu" component={RegisterForm} />
+        <Route path="/categories" component={Categories} />
+        <Route path="/new-products" component={NewProducts} />
+        <Route path="/products/" component={ProductPage} />
+        <Route path="/profili" component={Profile} />
+        <Route path="/shporta" component={Cart} />
+        <Route path="/porosite" component={Orders} />
+        <Route path="/logout" component={Logout} />
+        <Route path="/kycu" component={LoginForm} />
+        <Route path="/" exact component={Store} />
+      </Switch>
+    );
+
     return (
       <Layout>
-        <Switch>
-          <Route path="/regjistrohu" component={RegisterForm} />
-          <Route path="/shporta" component={Cart} />
-          <Route path="/porosite" component={Orders} />
-          <Route path="/profili" component={Profile} />
-          <Route path="/kycu" component={LoginForm} />
-          <Route path="/categories" component={Categories} />
-          <Route path="/new-products" component={NewProducts} />
-          <Route path="/products/" component={ProductPage} />
-          <Route path="/logout" component={Logout} />
-          <Route path="/" exact component={Store} />
-        </Switch>
+        {routes}
         <Footer />
       </Layout>
     );
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    isAuthenticated: state.auth.token !== null,
+  };
+};
 
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -49,4 +59,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default withRouter(connect(null, mapDispatchToProps)(App));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
