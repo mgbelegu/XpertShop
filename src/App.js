@@ -16,6 +16,7 @@ import * as actions from "./containers/store/actions/index";
 import "./App.css";
 import NewProducts from "./containers/home/newProducts/newProducts";
 import ProductPage from "./components/product/productPage/productPage";
+import BuyNow from "./containers/buynow/buynow";
 
 class App extends Component {
   componentDidMount() {
@@ -28,10 +29,11 @@ class App extends Component {
         <Route path="/regjistrohu" component={RegisterForm} />
         <Route path="/categories" component={Categories} />
         <Route path="/new-products" component={NewProducts} />
-        <Route path="/products/" component={ProductPage} />
+        <Route path="/products/:productID" component={ProductPage} />
         <Route path="/profili" component={Profile} />
         <Route path="/shporta" component={Cart} />
         <Route path="/porosite" component={Orders} />
+        <Route path="/bli-tani" component={BuyNow} />
         <Route path="/logout" component={Logout} />
         <Route path="/kycu" component={LoginForm} />
         <Route path="/" exact component={Store} />

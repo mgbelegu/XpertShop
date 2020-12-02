@@ -1,5 +1,6 @@
 .orders {
   margin: 16px 64px 75px;
+  min-height: 400px;
 }
 
 .ordersHeader {
@@ -33,5 +34,82 @@
 @media (max-width: 620px) {
   .orders {
     margin: 16px;
+  }
+}
+
+.ordersTable {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.ordersTable tr th {
+  padding: 16px;
+  text-align: center;
+}
+
+.ordersTable td {
+  text-align: center;
+}
+
+.ordersTable td p {
+  font-weight: bold;
+}
+
+.ordersTable tr th:first-child {
+  width: 300px;
+}
+
+.ordersTable tr th:last-child {
+  width: 100px;
+}
+
+#orderStatusTH {
+  width: 285px;
+}
+
+@media (max-width: 520px) {
+  .ordersTable tr th:first-child {
+    width: 100px !important;
+  }
+
+  .ordersTable tr td:first-child {
+    width: 100px !important;
+    word-break: break-all;
+  }
+
+  .ordersTable tr td {
+    font-size: 14px;
+  }
+
+  .ordersTable tr th:last-child {
+    width: 100px;
+  }
+}
+
+@media (max-width: 475px) {
+  .ordersTable tr th {
+    font-size: 12px;
+  }
+  .ordersTable tr td {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 375px) {
+  .ordersTable tr th:last-child {
+    width: 50px !important;
+  }
+
+  .ordersTable tr td:last-child {
+    width: 50px !important;
+  }
+
+  .orders {
+    margin: 16px 8px;
+  }
+
+  .ordersTable td,
+  .ordersTable th {
+    padding: 4px;
   }
 }

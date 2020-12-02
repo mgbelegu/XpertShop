@@ -11,6 +11,36 @@ class ProductPage extends Component {
     },
     loading: false,
     redirect: false,
+    redirectToPurchase: false,
+  };
+
+  buyNowHandler = () => {
+    this.setState({
+      loading: true,
+    });
+    let productCartSpecifications = {};
+    let price = this.state.propsState.productPrice;
+    if (typeof price != "number") {
+      price = parseFloat(price.replace(/,/g, ""));
+    }
+    productCartSpecifications = {
+      ...this.state.propsState,
+      productPrice: price,
+      productCount: 1,
+    };
+    axios
+      .put(
+        `https://xpert-ecommerce.firebaseio.com/purchasing/` +
+          productCartSpecifications.productId +
+          `.json`,
+        productCartSpecifications
+      )
+      .then((response) => {
+        this.setState({ loading: false, redirectToPurchase: true });
+      })
+      .catch((error) => {
+        this.setState({ loading: false });
+      });
   };
 
   addToCartHandler = () => {
@@ -50,7 +80,9 @@ class ProductPage extends Component {
     let productButtons = (
       <div className="buttonContainer">
         <button onClick={this.addToCartHandler}>SHTO NË SHPORTË</button>
-        <button className="buyNow">BLI TANI</button>
+        <button className="buyNow" onClick={this.buyNowHandler}>
+          BLI TANI
+        </button>
       </div>
     );
 
@@ -58,8 +90,14 @@ class ProductPage extends Component {
       productButtons = <Spinner />;
     }
 
+    let redirectBuyNow = null;
+    if (this.state.redirectToPurchase) {
+      redirectBuyNow = <Redirect to="/bli-tani" />;
+    }
+
     return (
       <div className="productPage">
+        {redirectBuyNow}
         {redirectCart}
         <div className="productImageSection">
           <img src={this.state.propsState.productImage} alt="" />

@@ -28,12 +28,15 @@ const input = (props) => {
       break;
     case "textarea":
       inputElement = (
-        <textarea
-          className={inputClasses.join(" ")}
-          {...props.elementConfig}
-          value={props.value}
-          onChange={props.changed}
-        />
+        <div>
+          <label>{props.labelName}</label>
+          <textarea
+            className={inputClasses.join(" ")}
+            {...props.elementConfig}
+            value={props.value}
+            onChange={props.changed}
+          />
+        </div>
       );
       break;
     case "select":

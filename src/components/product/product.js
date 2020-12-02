@@ -11,6 +11,7 @@ class Product extends Component {
     },
     loading: false,
     redirect: false,
+    redirectToPurchase: false,
   };
 
   addToCartHandler = () => {
@@ -37,6 +38,30 @@ class Product extends Component {
       });
   };
 
+  buyNowHandler = () => {
+    this.setState({
+      loading: true,
+    });
+    let productCartSpecifications = {};
+    productCartSpecifications = {
+      ...this.state.specifications,
+      productCount: 1,
+    };
+    axios
+      .put(
+        `https://xpert-ecommerce.firebaseio.com/purchasing/` +
+          productCartSpecifications.productId +
+          `.json`,
+        productCartSpecifications
+      )
+      .then((response) => {
+        this.setState({ loading: false, redirectToPurchase: true });
+      })
+      .catch((error) => {
+        this.setState({ loading: false });
+      });
+  };
+
   render() {
     let productButtons = (
       <div className="buttonDiv">
@@ -48,7 +73,9 @@ class Product extends Component {
 
         <div>
           <button onClick={this.addToCartHandler}>SHTO NË SHPORTË</button>
-          <button className="buyNow">BLI TANI</button>
+          <button className="buyNow" onClick={this.buyNowHandler}>
+            BLI TANI
+          </button>
         </div>
       </div>
     );
@@ -62,9 +89,15 @@ class Product extends Component {
       redirectCart = <Redirect to="/shporta" />;
     }
 
+    let redirectBuyNow = null;
+    if (this.state.redirectToPurchase) {
+      redirectBuyNow = <Redirect to="/bli-tani" />;
+    }
+
     return (
       <div className="productContainer">
         {redirectCart}
+        {redirectBuyNow}
         <Link
           to={{
             pathname: `/products/${this.state.specifications.productId}`,

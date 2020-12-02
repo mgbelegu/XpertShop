@@ -94,7 +94,7 @@ class CartProduct extends Component {
         </td>
         <td>
           <button className="countButton" onClick={this.updateCountHandler}>
-            Përditëso sasinë
+            Përditëso
           </button>
         </td>
       </tr>

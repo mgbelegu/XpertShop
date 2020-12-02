@@ -1,0 +1,19 @@
+.pending {
+  background-color: #f49b03;
+  color: white;
+}
+
+.denied {
+  background-color: #db0000;
+  color: white;
+}
+
+.approved {
+  background-color: #8ab83e;
+  color: #0a3637;
+}
+
+.delivered {
+  background-color: #14abc4;
+  color: white;
+}

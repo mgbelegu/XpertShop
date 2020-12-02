@@ -21,7 +21,7 @@ tr:first-child {
 
 tr:first-child th {
   color: white;
-  padding: 8px;
+  padding: 16px;
 }
 
 td img {
@@ -105,6 +105,7 @@ input {
 }
 
 .countButton {
+  padding: 4px;
   border: 2px solid #ccc;
   outline: none;
   background-color: white;
@@ -125,8 +126,96 @@ input {
   color: #8ab83e;
 }
 
-.Counter {
+input.Counter {
   margin: 8px 0;
   font-weight: bold;
-  width: 40px;
+  width: 55px;
+}
+
+@media (max-width: 475px) {
+  #cart h4 {
+    font-size: 14px;
+  }
+
+  #cart th {
+    font-size: 14px;
+  }
+
+  #cart a {
+    font-size: 14px;
+  }
+
+  #imageTH {
+    display: none;
+  }
+
+  .imageCell {
+    display: none;
+  }
+
+  input.Counter {
+    width: 40px;
+  }
+
+  #updateCountTH {
+    width: 50px;
+  }
+
+  .countButton {
+    font-size: 12px;
+  }
+
+  .deleteButton {
+    height: 20px;
+    width: 20px;
+  }
+
+  .cart {
+    margin: 16px 8px;
+  }
+}
+
+@media (max-width: 375px) {
+  #cart th {
+    font-size: 12px;
+  }
+
+  #cart h4 {
+    font-size: 12px;
+  }
+
+  #cart a {
+    font-size: 12px;
+  }
+
+  #imageTH {
+    display: none;
+  }
+
+  .imageCell {
+    display: none;
+  }
+
+  input.Counter {
+    width: 40px;
+  }
+
+  #updateCountTH {
+    width: 40px;
+  }
+
+  .countButton {
+    font-size: 12px;
+    width: 40px;
+    word-break: break-all;
+  }
+
+  .deleteButton {
+    height: 15px;
+    width: 15px;
+  }
+
+  .cart {
+    margin: 16px 8px;
+  }
 }

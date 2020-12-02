@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import "./profile.css";
 import Layout from "../layout/layout";
 import LoginIcon from "../../assets/loginicon.png";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import logoutIcon from "../../assets/Exit.svg";
 import cartIcon from "../../assets/Shopping2.svg";
 import ordersIcon from "../../assets/Porosite2.svg";

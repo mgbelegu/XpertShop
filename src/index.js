@@ -10,6 +10,8 @@ import reportWebVitals from "./reportWebVitals";
 import productReducer from "./containers/store/products";
 import orderReducer from "./containers/store/orders-reducer";
 import authReducer from "./containers/store/authreducer";
+import ordersMadeReducer from "./containers/store/ordersmade-reducer";
+import buyNowReducer from "./containers/store/buynowreducer";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -17,6 +19,8 @@ const rootReducer = combineReducers({
   orders: orderReducer,
   products: productReducer,
   auth: authReducer,
+  ordersMade: ordersMadeReducer,
+  buyNow: buyNowReducer,
 });
 
 const store = createStore(

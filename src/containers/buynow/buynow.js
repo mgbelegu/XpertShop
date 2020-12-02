@@ -1,17 +1,14 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import * as actions from "../store/actions/index";
-import "./cart.css";
+import "../cart/cart.css";
 import Layout from "../layout/layout";
 import LoginIcon from "../../assets/loginicon.png";
 import { NavLink, Redirect } from "react-router-dom";
-import CartProduct from "./cartProduct/cartProduct";
-import Spinner from "../ui/spinner/spinner";
-import TotalCart from "./totalCart/totalCart";
 import axios from "axios";
 import Input from "../ui/input/input";
 
-class Cart extends Component {
+class BuyNow extends Component {
   state = {
     loading: false,
     redirect: false,
@@ -146,24 +143,12 @@ class Cart extends Component {
   };
 
   componentDidMount() {
-    this.props.onFetchOrders();
+    this.props.onFetchPurchasing();
   }
 
-  goToCheckoutHandler = (totprice) => {
-    if (totprice !== 0) {
-      this.setState({
-        checkout: true,
-      });
-    } else {
-      alert("Shporta juaj është bosh!");
-    }
-  };
-
-  modifyOrderHandler = () => {
-    this.setState({
-      checkout: false,
-    });
-  };
+  componentWillUnmount() {
+    axios.delete("https://xpert-ecommerce.firebaseio.com/purchasing.json");
+  }
 
   checkoutHandler = (totprice, orderSpecifications, formValidity) => {
     if (totprice !== 0 && formValidity === true) {
@@ -223,11 +208,9 @@ class Cart extends Component {
         .catch((error) => {
           this.setState({ loading: false });
         });
-      axios.delete("https://xpert-ecommerce.firebaseio.com/orders.json");
+      axios.delete("https://xpert-ecommerce.firebaseio.com/purchasing.json");
     } else if (formValidity === false) {
       alert("Plotësoni detajet e faturimit!");
-    } else {
-      alert("Shporta juaj është bosh!");
     }
   };
 
@@ -280,59 +263,23 @@ class Cart extends Component {
       </div>
     );
 
-    let showCart = (
-      <tr>
-        <td
-          style={{ width: "100%", margin: "0 auto !important" }}
-          colSpan="100%"
-        >
-          <Spinner />
-        </td>
-      </tr>
-    );
-
     let total = 0;
-    this.props.orders.map(
+    this.props.buyProduct.map(
       (orderItem, i) =>
         (total = total + orderItem.productPrice * orderItem.productCount)
     );
 
     let orderObject = [];
     if (!this.props.loading) {
-      let cartProductList = null;
-      cartProductList = this.props.orders
+      this.props.buyProduct
         .filter((orderPrCount) => orderPrCount.productCount !== 0)
         .map((orderItem, i) => {
           orderObject.push({
             title: orderItem.productTitle,
             count: orderItem.productCount,
           });
-          return (
-            <CartProduct
-              key={i}
-              productImage={orderItem.productImage}
-              productTitle={orderItem.productTitle}
-              productPrice={Number(
-                orderItem.productPrice * orderItem.productCount
-              ).toLocaleString()}
-              productId={orderItem.productId}
-              productDescription={orderItem.productDescription}
-              productCount={orderItem.productCount}
-            />
-          );
+          return null;
         });
-
-      if (cartProductList.length === 0) {
-        showCart = (
-          <tr>
-            <td colSpan="100%" style={{ padding: "50px" }}>
-              Shporta juaj është bosh!
-            </td>
-          </tr>
-        );
-      } else {
-        showCart = cartProductList;
-      }
     }
 
     let redirectOrders = null;
@@ -340,44 +287,8 @@ class Cart extends Component {
       redirectOrders = <Redirect to="/porosite" />;
     }
 
-    if (this.props.isAuthenticated) {
-      cartAuthenticated = (
-        <div className="cart">
-          {redirectOrders}
-          <div className="cartHeader">
-            <h1>Shporta</h1>
-          </div>
-
-          <div className="cartContainer">
-            <h3>Produktet:</h3>
-            <table id="cart">
-              <tbody>
-                <tr>
-                  <th id="delTH"></th>
-                  <th id="imageTH"></th>
-                  <th className="productCell">Produkti</th>
-                  <th id="priceTH">Cmimi</th>
-                  <th id="countTH">Sasia</th>
-                  <th id="updateCountTH"></th>
-                </tr>
-                {showCart}
-              </tbody>
-            </table>
-
-            <TotalCart totalPrice={total} />
-            <button
-              className="checkoutButton"
-              onClick={() => this.goToCheckoutHandler(total)}
-            >
-              Bëje porosinë
-            </button>
-          </div>
-        </div>
-      );
-    }
-
     let cartListSummary = null;
-    cartListSummary = this.props.orders
+    cartListSummary = this.props.buyProduct
       .filter((orderPrCount) => orderPrCount.productCount !== 0)
       .map((orderItem, i) => {
         return (
@@ -418,11 +329,7 @@ class Cart extends Component {
       />
     ));
 
-    if (
-      this.props.isAuthenticated &&
-      this.state.checkout &&
-      cartListSummary.length !== 0
-    ) {
+    if (this.props.isAuthenticated) {
       cartAuthenticated = (
         <div className="cart">
           {redirectOrders}
@@ -449,12 +356,6 @@ class Cart extends Component {
                 <h4>Çmimi total: {Number(total).toLocaleString()} ALL</h4>
               </div>
               <button
-                className="modifyOrderButton"
-                onClick={() => this.modifyOrderHandler()}
-              >
-                Modifiko porosinë
-              </button>
-              <button
                 type="submit"
                 className="checkoutButtonSummary"
                 onClick={() =>
@@ -480,15 +381,15 @@ class Cart extends Component {
 const mapStateToProps = (state) => {
   return {
     isAuthenticated: state.auth.token !== null,
-    orders: state.orders.orders,
+    buyProduct: state.buyNow.buyProduct,
     loading: state.orders.loading,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onFetchOrders: () => dispatch(actions.fetchOrders()),
+    onFetchPurchasing: () => dispatch(actions.fetchBuyProduct()),
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Cart);
+export default connect(mapStateToProps, mapDispatchToProps)(BuyNow);
