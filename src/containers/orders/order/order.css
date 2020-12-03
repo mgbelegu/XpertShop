@@ -17,3 +17,10 @@
   background-color: #14abc4;
   color: white;
 }
+
+.orderMadeLink {
+  color: #0a3637;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+}

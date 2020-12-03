@@ -30,7 +30,7 @@ class navigationLinks extends Component {
           </li>
         ) : null}
         <li>
-          <NavLink to="/profili">
+          <NavLink to="/llogaria">
             <img className="navIcons" src={ProfiliIcon} alt="Profili" />
           </NavLink>
         </li>

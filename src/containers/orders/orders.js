@@ -9,6 +9,11 @@ import OrderItem from "./order/order";
 import Spinner from "../../containers/ui/spinner/spinner";
 
 class Orders extends Component {
+  state = {
+    showDetails: false,
+    loading: false,
+  };
+
   componentDidMount() {
     this.props.onFetchOrdersMade();
   }
@@ -45,6 +50,8 @@ class Orders extends Component {
           total={order.total}
           state={order.state}
           date={order.date}
+          products={order.productsOrdered}
+          userinfo={order.userinfo}
         />
       ));
     }

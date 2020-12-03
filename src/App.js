@@ -17,6 +17,7 @@ import "./App.css";
 import NewProducts from "./containers/home/newProducts/newProducts";
 import ProductPage from "./components/product/productPage/productPage";
 import BuyNow from "./containers/buynow/buynow";
+import OrderDetails from "./containers/orders/orderDetails/orderDetails";
 
 class App extends Component {
   componentDidMount() {
@@ -30,7 +31,8 @@ class App extends Component {
         <Route path="/categories" component={Categories} />
         <Route path="/new-products" component={NewProducts} />
         <Route path="/products/:productID" component={ProductPage} />
-        <Route path="/profili" component={Profile} />
+        <Route path="/porosite/:order" component={OrderDetails} />
+        <Route path="/llogaria" component={Profile} />
         <Route path="/shporta" component={Cart} />
         <Route path="/porosite" component={Orders} />
         <Route path="/bli-tani" component={BuyNow} />

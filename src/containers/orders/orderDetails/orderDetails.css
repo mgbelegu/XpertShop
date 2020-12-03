@@ -1,0 +1,26 @@
+.orderDetails {
+  width: 400px;
+  margin: 16px auto !important;
+  border: 1px solid #eee;
+  padding: 32px;
+}
+
+.orderDetails h1 {
+  font-size: 32px;
+}
+
+@media (max-width: 500px) {
+  .orderDetails h1 {
+    font-size: 28px;
+  }
+  .orderDetails {
+    border: none;
+    width: auto;
+  }
+}
+
+@media (max-width: 400px) {
+  ol {
+    padding: 0px;
+  }
+}

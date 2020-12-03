@@ -226,7 +226,7 @@ class RegisterForm extends Component {
 
     let authRedirect = null;
     if (this.props.isAuthenticated) {
-      authRedirect = <Redirect to="/profili" />;
+      authRedirect = <Redirect to="/llogaria" />;
     }
 
     return (

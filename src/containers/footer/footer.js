@@ -35,7 +35,7 @@ const footer = (props) => {
           </NavLink>
           <NavLink to="/shporta">Shporta</NavLink>
           <NavLink to="/porosite">Porosite</NavLink>
-          <NavLink to="/profili">Profili</NavLink>
+          <NavLink to="/llogaria">Llogaria</NavLink>
         </div>
         <div className="socialDiv">
           <h3 className="socialH3">Social Media</h3>

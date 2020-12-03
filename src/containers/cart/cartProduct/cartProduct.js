@@ -33,7 +33,7 @@ class CartProduct extends Component {
       )
       .then((response) => {
         this.setState({ loading: false, redirect: true });
-        window.location.reload(false);
+        window.location.reload();
       })
       .catch((error) => {
         this.setState({ loading: false });
@@ -42,16 +42,14 @@ class CartProduct extends Component {
 
   deleteHandler = () => {
     axios
-      .put(
+      .delete(
         `https://xpert-ecommerce.firebaseio.com/orders/` +
           this.state.id +
-          `/productCount` +
-          `.json`,
-        "0"
+          `.json`
       )
       .then((response) => {
         this.setState({ loading: false, redirect: true });
-        window.location.reload(false);
+        window.location.reload();
       })
       .catch((error) => {
         this.setState({ loading: false });
@@ -86,7 +84,7 @@ class CartProduct extends Component {
         <td>
           <input
             type="number"
-            min="0"
+            min="1"
             className="Counter"
             value={this.state.value}
             onChange={this.productCountHandler}

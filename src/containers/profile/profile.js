@@ -26,7 +26,7 @@ class Profile extends Component {
       Authenticated = (
         <div className="profile">
           <div className="profileHeader">
-            <h1>Mirë se vjen në profilin tënd personal!</h1>
+            <h1>Mirë se vjen në llogarinë tënde!</h1>
             <NavLink to="/logout">
               <img
                 className="logoutIcon"
