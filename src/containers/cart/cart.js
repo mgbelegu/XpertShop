@@ -447,6 +447,11 @@ class Cart extends Component {
                   </tbody>
                 </table>
                 <h4>Çmimi total: {Number(total).toLocaleString()} ALL</h4>
+                <label className="container">
+                  Cash On Delivery
+                  <input type="radio" checked="checked" name="radio" readOnly />
+                  <span className="checkmark"></span>
+                </label>
               </div>
               <button
                 className="modifyOrderButton"
