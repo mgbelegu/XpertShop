@@ -4,6 +4,7 @@ import Product from "../../../components/product/product";
 import Spinner from "../../ui/spinner/spinner";
 import * as actions from "../../store/actions/index";
 import Aux from "../../hoc/Auxiliary";
+import bannerIMG from "../../../assets/banner.svg";
 
 class NewProducts extends Component {
   componentDidMount() {
@@ -27,7 +28,7 @@ class NewProducts extends Component {
     return (
       <Aux>
         <div className="storeHeaderImage">
-          <img src="http://via.placeholder.com/1920x800" alt="" />
+          <img src={bannerIMG} alt="" />
         </div>
         <div className="newProducts">
           <div className="newProductsHeader">

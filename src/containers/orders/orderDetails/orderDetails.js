@@ -44,7 +44,10 @@ class orderDetails extends Component {
           {userInfo}
         </div>
         <h3>Totali: {Number(this.state.total).toLocaleString()} ALL</h3>
-        <h3>Gjëndja e porosisë: {this.state.status}</h3>
+        <h3>
+          Gjëndja e porosisë:{" "}
+          <span className="status">{this.state.status}</span>
+        </h3>
       </div>
     );
   }

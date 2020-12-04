@@ -1,13 +1,15 @@
 import React, { Component } from "react";
+import { NavLink } from "react-router-dom";
 import "./categories.css";
 import Layout from "../layout/layout";
+import bannerIMG from "../../assets/banner.svg";
 
 class Categories extends Component {
   render() {
     return (
       <Layout>
         <div className="storeHeaderImage">
-          <img src="http://via.placeholder.com/1920x800" alt="" />
+          <img src={bannerIMG} alt="" />
         </div>
 
         <div className="categories">
@@ -17,78 +19,78 @@ class Categories extends Component {
 
           <div className="categoriesContainer">
             <div>
-              <a href="/categories/woman">
+              <NavLink to="/categories/woman">
                 <img src="http://via.placeholder.com/150" alt="" />
-              </a>
+              </NavLink>
               <h3>Woman</h3>
             </div>
             <div>
-              <a href="/categories/home">
+              <NavLink to="/categories/home">
                 <img src="http://via.placeholder.com/150" alt="" />
-              </a>
+              </NavLink>
               <h3>Home</h3>
             </div>
             <div>
-              <a href="/categories/electric">
+              <NavLink to="/categories/electric">
                 <img src="http://via.placeholder.com/150" alt="" />
-              </a>
+              </NavLink>
               <h3>Electric</h3>
             </div>
             <div>
-              <a href="/categories/bike">
+              <NavLink to="/categories/bike">
                 <img src="http://via.placeholder.com/150" alt="" />
-              </a>
+              </NavLink>
               <h3>Bike</h3>
             </div>
             <div>
-              <a href="/categories/food">
+              <NavLink to="/categories/food">
                 <img src="http://via.placeholder.com/150" alt="" />
-              </a>
+              </NavLink>
               <h3>Food</h3>
             </div>
             <div>
-              <a href="/categories/tech">
+              <NavLink to="/categories/tech">
                 <img src="http://via.placeholder.com/150" alt="" />
-              </a>
+              </NavLink>
               <h3>Tech</h3>
             </div>
           </div>
 
           <div className="categoriesContainer">
             <div>
-              <a href="/categories/woman">
+              <NavLink to="/categories/woman">
                 <img src="http://via.placeholder.com/150" alt="" />
-              </a>
+              </NavLink>
               <h3>Books</h3>
             </div>
             <div>
-              <a href="/categories/home">
+              <NavLink to="/categories/home">
                 <img src="http://via.placeholder.com/150" alt="" />
-              </a>
+              </NavLink>
               <h3>Clothes</h3>
             </div>
             <div>
-              <a href="/categories/electric">
+              <NavLink to="/categories/electric">
                 <img src="http://via.placeholder.com/150" alt="" />
-              </a>
+              </NavLink>
               <h3>Accessories</h3>
             </div>
             <div>
-              <a href="/categories/bike">
+              <NavLink to="/categories/bike">
                 <img src="http://via.placeholder.com/150" alt="" />
-              </a>
+              </NavLink>
               <h3>Backpacks</h3>
             </div>
             <div>
-              <a href="/categories/food">
+              <NavLink to="/categories/food">
                 <img src="http://via.placeholder.com/150" alt="" />
-              </a>
+              </NavLink>
               <h3>Scooters</h3>
             </div>
             <div>
-              <a href="/categories/tech">
+              <NavLink to="/categories/tech">
                 <img src="http://via.placeholder.com/150" alt="" />
-              </a>
+              </NavLink>
               <h3>Phones</h3>
             </div>
           </div>

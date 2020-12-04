@@ -18,6 +18,7 @@ import NewProducts from "./containers/home/newProducts/newProducts";
 import ProductPage from "./components/product/productPage/productPage";
 import BuyNow from "./containers/buynow/buynow";
 import OrderDetails from "./containers/orders/orderDetails/orderDetails";
+import NotFound from "./containers/notfound/notfound";
 
 class App extends Component {
   componentDidMount() {
@@ -39,6 +40,7 @@ class App extends Component {
         <Route path="/logout" component={Logout} />
         <Route path="/kycu" component={LoginForm} />
         <Route path="/" exact component={Store} />
+        <Route component={NotFound} />
       </Switch>
     );
 

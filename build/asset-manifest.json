@@ -1,17 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.54632192.chunk.css",
-    "main.js": "/static/js/main.5fe9d75b.chunk.js",
-    "main.js.map": "/static/js/main.5fe9d75b.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.6f0a88fb.js",
-    "runtime-main.js.map": "/static/js/runtime-main.6f0a88fb.js.map",
-    "static/js/2.3d563c06.chunk.js": "/static/js/2.3d563c06.chunk.js",
-    "static/js/2.3d563c06.chunk.js.map": "/static/js/2.3d563c06.chunk.js.map",
-    "static/js/3.3e5635cc.chunk.js": "/static/js/3.3e5635cc.chunk.js",
-    "static/js/3.3e5635cc.chunk.js.map": "/static/js/3.3e5635cc.chunk.js.map",
+    "main.css": "/static/css/main.218ed910.chunk.css",
+    "main.js": "/static/js/main.21173e98.chunk.js",
+    "main.js.map": "/static/js/main.21173e98.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.44902c17.js",
+    "runtime-main.js.map": "/static/js/runtime-main.44902c17.js.map",
+    "static/js/2.a37e1338.chunk.js": "/static/js/2.a37e1338.chunk.js",
+    "static/js/2.a37e1338.chunk.js.map": "/static/js/2.a37e1338.chunk.js.map",
+    "static/js/3.b54fb2e9.chunk.js": "/static/js/3.b54fb2e9.chunk.js",
+    "static/js/3.b54fb2e9.chunk.js.map": "/static/js/3.b54fb2e9.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.54632192.chunk.css.map": "/static/css/main.54632192.chunk.css.map",
-    "static/js/2.3d563c06.chunk.js.LICENSE.txt": "/static/js/2.3d563c06.chunk.js.LICENSE.txt",
+    "static/css/main.218ed910.chunk.css.map": "/static/css/main.218ed910.chunk.css.map",
+    "static/js/2.a37e1338.chunk.js.LICENSE.txt": "/static/js/2.a37e1338.chunk.js.LICENSE.txt",
+    "static/media/404.c00d98b3.svg": "/static/media/404.c00d98b3.svg",
     "static/media/cartProduct.css": "/static/media/DeleteRed.030ba738.svg",
     "static/media/Exit.4e4a3041.svg": "/static/media/Exit.4e4a3041.svg",
     "static/media/Home.455ad47d.svg": "/static/media/Home.455ad47d.svg",
@@ -20,13 +21,14 @@
     "static/media/Profili.a9adb5e5.svg": "/static/media/Profili.a9adb5e5.svg",
     "static/media/Shopping.5a9e8284.svg": "/static/media/Shopping.5a9e8284.svg",
     "static/media/Shopping2.5626e197.svg": "/static/media/Shopping2.5626e197.svg",
+    "static/media/banner.e70bea1e.svg": "/static/media/banner.e70bea1e.svg",
     "static/media/shop.baa04878.png": "/static/media/shop.baa04878.png",
     "static/media/xpertshoplogo.1f0332bd.svg": "/static/media/xpertshoplogo.1f0332bd.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.6f0a88fb.js",
-    "static/js/2.3d563c06.chunk.js",
-    "static/css/main.54632192.chunk.css",
-    "static/js/main.5fe9d75b.chunk.js"
+    "static/js/runtime-main.44902c17.js",
+    "static/js/2.a37e1338.chunk.js",
+    "static/css/main.218ed910.chunk.css",
+    "static/js/main.21173e98.chunk.js"
   ]
 }

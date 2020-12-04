@@ -39,11 +39,15 @@ class Profile extends Component {
 
           <div className="profileContainer">
             <div className="userInfo">
-              <h3>Të dhënat personale:</h3>
-              <p>Ju nuk keni asnjë të dhënë!</p>
+              <h3>EMËR MBIEMËR</h3>
+              <p>Kompania:</p>
+              <p>NIPT-i:</p>
+              <p>Rruga:</p>
+              <p>Numër ndërtese:</p>
+              <p>Numër telefoni: +3556********</p>
             </div>
             <div className="userLinks">
-              <h3>Të tjera:</h3>
+              <h3>Shporta dhe porositë:</h3>
               <div className="others">
                 <NavLink to="/shporta">
                   <img

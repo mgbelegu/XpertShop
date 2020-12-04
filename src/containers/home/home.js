@@ -7,6 +7,7 @@ import * as actions from "../store/actions/index";
 import chevron from "../../assets/chevron.png";
 import Layout from "../layout/layout";
 import { NavLink } from "react-router-dom";
+import bannerIMG from "../../assets/banner.svg";
 
 class Store extends Component {
   componentDidMount() {
@@ -32,7 +33,7 @@ class Store extends Component {
     return (
       <Layout>
         <div className="storeHeaderImage">
-          <img src="http://via.placeholder.com/1920x800" alt="" />
+          <img src={bannerIMG} alt="" />
         </div>
 
         <div className="categories">
@@ -45,39 +46,39 @@ class Store extends Component {
 
           <div className="categoriesContainer">
             <div>
-              <a href="/categories/woman">
+              <NavLink to="/categories/woman">
                 <img src="http://via.placeholder.com/150" alt="" />
-              </a>
+              </NavLink>
               <h3>Woman</h3>
             </div>
             <div>
-              <a href="/categories/home">
+              <NavLink to="/categories/home">
                 <img src="http://via.placeholder.com/150" alt="" />
-              </a>
+              </NavLink>
               <h3>Home</h3>
             </div>
             <div>
-              <a href="/categories/electric">
+              <NavLink to="/categories/electric">
                 <img src="http://via.placeholder.com/150" alt="" />
-              </a>
+              </NavLink>
               <h3>Electric</h3>
             </div>
             <div>
-              <a href="/categories/bike">
+              <NavLink to="/categories/bike">
                 <img src="http://via.placeholder.com/150" alt="" />
-              </a>
+              </NavLink>
               <h3>Bike</h3>
             </div>
             <div>
-              <a href="/categories/food">
+              <NavLink to="/categories/food">
                 <img src="http://via.placeholder.com/150" alt="" />
-              </a>
+              </NavLink>
               <h3>Food</h3>
             </div>
             <div>
-              <a href="/categories/tech">
+              <NavLink to="/categories/tech">
                 <img src="http://via.placeholder.com/150" alt="" />
-              </a>
+              </NavLink>
               <h3>Tech</h3>
             </div>
           </div>
