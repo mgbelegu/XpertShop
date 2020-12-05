@@ -50,8 +50,13 @@ li {
 li a {
   color: white;
   text-decoration: none;
+  flex-direction: column;
   display: flex;
   align-items: center;
+}
+
+li a p {
+  margin: 0;
 }
 
 li a:hover {

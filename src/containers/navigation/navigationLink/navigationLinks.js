@@ -13,12 +13,14 @@ class navigationLinks extends Component {
         <li className="homeLink">
           <NavLink to="/">
             <img className="navIcons" src={HomeIcon} alt="Home" />
+            <p>Home</p>
           </NavLink>
         </li>
         {this.props.isAuthenticated ? (
           <li className="cartLink">
             <NavLink to="/shporta">
               <img className="navIcons" src={ShoppingIcon} alt="Shporta" />
+              <p>Shporta</p>
             </NavLink>
           </li>
         ) : null}
@@ -26,12 +28,14 @@ class navigationLinks extends Component {
           <li className="ordersLink">
             <NavLink to="/porosite">
               <img className="navIcons" src={PorosiIcon} alt="Porosite" />
+              <p>Porosite</p>
             </NavLink>
           </li>
         ) : null}
         <li>
           <NavLink to="/llogaria">
             <img className="navIcons" src={ProfiliIcon} alt="Profili" />
+            <p>Profili</p>
           </NavLink>
         </li>
       </ul>

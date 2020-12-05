@@ -9,7 +9,7 @@ const notfound = () => {
       <h1>404 FAQJA NUK EKZISTON </h1>
       <img src={notfoundImg} alt="" />
       <NavLink to="/">
-        <h2>SHKONI TEK FAQJA KRYESORE.</h2>
+        <h2>KTHEHUNI TEK FAQJA KRYESORE.</h2>
       </NavLink>
     </div>
   );

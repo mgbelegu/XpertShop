@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
+import { connect } from "react-redux";
 import axios from "axios";
 import Spinner from "../spinner/spinner";
 import "./productPage.css";
@@ -15,61 +16,73 @@ class ProductPage extends Component {
   };
 
   buyNowHandler = () => {
-    this.setState({
-      loading: true,
-    });
-    let productCartSpecifications = {};
-    let price = this.state.propsState.productPrice;
-    if (typeof price != "number") {
-      price = parseFloat(price.replace(/,/g, ""));
-    }
-    productCartSpecifications = {
-      ...this.state.propsState,
-      productPrice: price,
-      productCount: 1,
-    };
-    axios
-      .put(
-        `https://xpert-ecommerce.firebaseio.com/purchasing/` +
-          productCartSpecifications.productId +
-          `.json`,
-        productCartSpecifications
-      )
-      .then((response) => {
-        this.setState({ loading: false, redirectToPurchase: true });
-      })
-      .catch((error) => {
-        this.setState({ loading: false });
+    if (this.props.isAuthenticated) {
+      this.setState({
+        loading: true,
       });
+      let productCartSpecifications = {};
+      let price = this.state.propsState.productPrice;
+      if (typeof price != "number") {
+        price = parseFloat(price.replace(/,/g, ""));
+      }
+      productCartSpecifications = {
+        ...this.state.propsState,
+        productPrice: price,
+        productCount: 1,
+      };
+      axios
+        .put(
+          `https://xpert-ecommerce.firebaseio.com/purchasing/` +
+            productCartSpecifications.productId +
+            `.json`,
+          productCartSpecifications
+        )
+        .then((response) => {
+          this.setState({ loading: false, redirectToPurchase: true });
+        })
+        .catch((error) => {
+          this.setState({ loading: false });
+        });
+    } else {
+      this.setState({
+        redirect: true,
+      });
+    }
   };
 
   addToCartHandler = () => {
-    this.setState({
-      loading: true,
-    });
-    let productSpecifications = {};
-    let price = this.state.propsState.productPrice;
-    if (typeof price != "number") {
-      price = parseFloat(price.replace(/,/g, ""));
-    }
-    productSpecifications = {
-      ...this.state.propsState,
-      productPrice: price,
-      productCount: 1,
-    };
-    axios
-      .put(
-        `https://xpert-ecommerce.firebaseio.com/orders/` +
-          productSpecifications.productId +
-          `.json`,
-        productSpecifications
-      )
-      .then((response) => {
-        this.setState({ loading: false, redirect: true });
-      })
-      .catch((error) => {
-        this.setState({ loading: false });
+    if (this.props.isAuthenticated) {
+      this.setState({
+        loading: true,
       });
+      let productSpecifications = {};
+      let price = this.state.propsState.productPrice;
+      if (typeof price != "number") {
+        price = parseFloat(price.replace(/,/g, ""));
+      }
+      productSpecifications = {
+        ...this.state.propsState,
+        productPrice: price,
+        productCount: 1,
+      };
+      axios
+        .put(
+          `https://xpert-ecommerce.firebaseio.com/orders/` +
+            productSpecifications.productId +
+            `.json`,
+          productSpecifications
+        )
+        .then((response) => {
+          this.setState({ loading: false, redirect: true });
+        })
+        .catch((error) => {
+          this.setState({ loading: false });
+        });
+    } else {
+      this.setState({
+        redirect: true,
+      });
+    }
   };
 
   render() {
@@ -120,4 +133,10 @@ class ProductPage extends Component {
   }
 }
 
-export default ProductPage;
+const mapStateToProps = (state) => {
+  return {
+    isAuthenticated: state.auth.token !== null,
+  };
+};
+
+export default connect(mapStateToProps)(ProductPage);
