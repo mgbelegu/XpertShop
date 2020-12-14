@@ -7,12 +7,14 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  margin: 16px 0;
 }
 
 .profileContainer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  padding-top: 16px;
 }
 
 .others {

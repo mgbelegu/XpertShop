@@ -24,3 +24,14 @@
   font-weight: bold;
   cursor: pointer;
 }
+
+.orderMadeLink:hover {
+  color: #0a3637;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.ordersTable td {
+  padding: 16px;
+}

@@ -8,6 +8,12 @@ import chevron from "../../assets/chevron.png";
 import Layout from "../layout/layout";
 import { NavLink } from "react-router-dom";
 import bannerIMG from "../../assets/banner.svg";
+import pc from "../../assets/pc/Computer-&-Laptop-Bardhe.png";
+import monitor from "../../assets/monitor/TV-&-Monitor-Bardhe.png";
+import printer from "../../assets/printer/Copier-Printer-Scanner-Bardhe.png";
+import phones from "../../assets/phones/Phone-Bardhe.png";
+import hardware from "../../assets/hardware/Hardware-Equipments-Bardhe.png";
+import network from "../../assets/network/Network-Equipments-Bardhe.png";
 
 class Store extends Component {
   componentDidMount() {
@@ -37,49 +43,54 @@ class Store extends Component {
         </div>
 
         <div className="categories">
-          <div className="categoriesHeader">
+          <div className="categoriesH">
             <h1>Kategorite</h1>
             <NavLink to="/categories">
               Të gjitha <img className="chevron" src={chevron} alt="" />
             </NavLink>
           </div>
 
-          <div className="categoriesContainer">
-            <div>
-              <NavLink to="/categories/woman">
-                <img src="http://via.placeholder.com/150" alt="" />
+          <div className="categoriesContainer row d-flex justify-content-center">
+            <div className="col-sm-2" id="pcCategory">
+              <NavLink to="/categories/computers">
+                <img className="img-fluid" src={pc} alt="" />
+                <h4 className="text-center">Computer & Laptops</h4>
               </NavLink>
-              <h3>Woman</h3>
             </div>
-            <div>
-              <NavLink to="/categories/home">
-                <img src="http://via.placeholder.com/150" alt="" />
+
+            <div className="col-sm-2">
+              <NavLink to="/categories/monitors">
+                <img className="img-fluid" src={monitor} alt="" />
+                <h4 className="text-center">TV & Monitors</h4>
               </NavLink>
-              <h3>Home</h3>
             </div>
-            <div>
-              <NavLink to="/categories/electric">
-                <img src="http://via.placeholder.com/150" alt="" />
+
+            <div className="col-sm-2">
+              <NavLink to="/categories/printers">
+                <img className="img-fluid" src={printer} alt="" />
+                <h4 className="text-center">Copier, Printers & Scanners</h4>
               </NavLink>
-              <h3>Electric</h3>
             </div>
-            <div>
-              <NavLink to="/categories/bike">
-                <img src="http://via.placeholder.com/150" alt="" />
+
+            <div className="col-sm-2">
+              <NavLink to="/categories/phones">
+                <img className="img-fluid" src={phones} alt="" />
+                <h4 className="text-center">Phones</h4>
               </NavLink>
-              <h3>Bike</h3>
             </div>
-            <div>
-              <NavLink to="/categories/food">
-                <img src="http://via.placeholder.com/150" alt="" />
+
+            <div className="col-sm-2">
+              <NavLink to="/categories/hardware">
+                <img className="img-fluid" src={hardware} alt="" />
+                <h4 className="text-center">Hardware equipments</h4>
               </NavLink>
-              <h3>Food</h3>
             </div>
-            <div>
-              <NavLink to="/categories/tech">
-                <img src="http://via.placeholder.com/150" alt="" />
+
+            <div className="col-sm-2" id="pcCategory">
+              <NavLink to="/categories/network">
+                <img className="img-fluid" src={network} alt="" />
+                <h4 className="text-center">Network equipments</h4>
               </NavLink>
-              <h3>Tech</h3>
             </div>
           </div>
         </div>

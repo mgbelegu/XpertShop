@@ -8,6 +8,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  margin: 16px 0;
 }
 
 .cartContainer {
@@ -125,6 +126,7 @@
 .orderSummaryTable {
   border-collapse: collapse;
   width: 100%;
+  margin-bottom: 16px;
 }
 
 .orderSummaryTable th {

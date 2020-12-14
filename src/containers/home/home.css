@@ -24,40 +24,21 @@
   margin: 16px 48px;
 }
 
-.categoriesHeader {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.categoriesHeader a {
+.categoriesH a {
   color: #1a1a1a;
   text-decoration: none;
   font-weight: 600;
 }
 
-.categoriesHeader h1 {
+.categoriesHh1 {
   color: #616161;
 }
 
-.categoriesContainer {
+.categoriesH {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
-  flex-wrap: nowrap;
-}
-
-.categoriesContainer div {
-  margin: 4px;
-}
-
-.categoriesContainer img {
-  width: 100%;
-}
-
-.categoriesContainer h3 {
-  text-align: center;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .chevron {
@@ -79,6 +60,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  margin: 16px 0;
 }
 
 .newProductsHeader h1 {
