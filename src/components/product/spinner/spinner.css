@@ -2,14 +2,14 @@
 .loader2:after {
   align-self: center;
   border-radius: 50% !important;
-  width: 25px !important;
-  height: 25px !important;
+  width: 28px !important;
+  height: 28px !important;
 }
 .loader2 {
   padding: 0 !important;
   display: inline-table;
   margin: auto;
-  font-size: 10px;
+  font-size: 12px;
   position: relative;
   text-indent: -9999em;
   border-top: 0.5em solid rgba(10, 54, 55, 0.2);
