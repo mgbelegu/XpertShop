@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.b11c7870.chunk.css",
-    "main.js": "/static/js/main.ec8ea20b.chunk.js",
-    "main.js.map": "/static/js/main.ec8ea20b.chunk.js.map",
+    "main.css": "/static/css/main.586bb4cc.chunk.css",
+    "main.js": "/static/js/main.a448ed6c.chunk.js",
+    "main.js.map": "/static/js/main.a448ed6c.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.44902c17.js",
     "runtime-main.js.map": "/static/js/runtime-main.44902c17.js.map",
     "static/js/2.7c3def84.chunk.js": "/static/js/2.7c3def84.chunk.js",
@@ -10,26 +10,35 @@
     "static/js/3.b54fb2e9.chunk.js": "/static/js/3.b54fb2e9.chunk.js",
     "static/js/3.b54fb2e9.chunk.js.map": "/static/js/3.b54fb2e9.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.b11c7870.chunk.css.map": "/static/css/main.b11c7870.chunk.css.map",
+    "static/css/main.586bb4cc.chunk.css.map": "/static/css/main.586bb4cc.chunk.css.map",
     "static/js/2.7c3def84.chunk.js.LICENSE.txt": "/static/js/2.7c3def84.chunk.js.LICENSE.txt",
     "static/media/404.c00d98b3.svg": "/static/media/404.c00d98b3.svg",
+    "static/media/Computer-&-Laptop-Bardhe.360e6224.png": "/static/media/Computer-&-Laptop-Bardhe.360e6224.png",
+    "static/media/Copier-Printer-Scanner-Bardhe.491c5fa3.png": "/static/media/Copier-Printer-Scanner-Bardhe.491c5fa3.png",
     "static/media/cartProduct.css": "/static/media/DeleteRed.030ba738.svg",
     "static/media/Exit.4e4a3041.svg": "/static/media/Exit.4e4a3041.svg",
+    "static/media/Hardware-Equipments-Bardhe.1e0bde2f.png": "/static/media/Hardware-Equipments-Bardhe.1e0bde2f.png",
     "static/media/Home.455ad47d.svg": "/static/media/Home.455ad47d.svg",
+    "static/media/Network-Equipments-Bardhe.0fc7547d.png": "/static/media/Network-Equipments-Bardhe.0fc7547d.png",
+    "static/media/Peripherals-Accessories-Bardhe.3b07b6d4.png": "/static/media/Peripherals-Accessories-Bardhe.3b07b6d4.png",
+    "static/media/Phone-Bardhe.1e2a7e73.png": "/static/media/Phone-Bardhe.1e2a7e73.png",
     "static/media/Porosite.c0ff6545.svg": "/static/media/Porosite.c0ff6545.svg",
     "static/media/Porosite2.9c9199bd.svg": "/static/media/Porosite2.9c9199bd.svg",
     "static/media/Profili.a9adb5e5.svg": "/static/media/Profili.a9adb5e5.svg",
+    "static/media/Security-System-Bardhe.0d2d7cc2.png": "/static/media/Security-System-Bardhe.0d2d7cc2.png",
     "static/media/Shopping.5a9e8284.svg": "/static/media/Shopping.5a9e8284.svg",
     "static/media/Shopping2.5626e197.svg": "/static/media/Shopping2.5626e197.svg",
+    "static/media/Software-Bardhe.ec2039c7.png": "/static/media/Software-Bardhe.ec2039c7.png",
+    "static/media/TV-&-Monitor-Bardhe.ace630eb.png": "/static/media/TV-&-Monitor-Bardhe.ace630eb.png",
+    "static/media/UPS-&-Battery-Bardhe.9b03b42f.png": "/static/media/UPS-&-Battery-Bardhe.9b03b42f.png",
     "static/media/banner.e70bea1e.svg": "/static/media/banner.e70bea1e.svg",
-    "static/media/compwhite.15a1d3e1.svg": "/static/media/compwhite.15a1d3e1.svg",
     "static/media/shop.baa04878.png": "/static/media/shop.baa04878.png",
     "static/media/xpertshoplogo.1f0332bd.svg": "/static/media/xpertshoplogo.1f0332bd.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.44902c17.js",
     "static/js/2.7c3def84.chunk.js",
-    "static/css/main.b11c7870.chunk.css",
-    "static/js/main.ec8ea20b.chunk.js"
+    "static/css/main.586bb4cc.chunk.css",
+    "static/js/main.a448ed6c.chunk.js"
   ]
 }
