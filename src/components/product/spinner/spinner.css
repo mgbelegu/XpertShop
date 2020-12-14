@@ -2,8 +2,8 @@
 .loader2:after {
   align-self: center;
   border-radius: 50% !important;
-  width: 20px !important;
-  height: 20px !important;
+  width: 25px !important;
+  height: 25px !important;
 }
 .loader2 {
   padding: 0 !important;
